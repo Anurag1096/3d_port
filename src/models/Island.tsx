@@ -4,7 +4,7 @@ import {a , Globals} from "@react-spring/three";
 import { useGLTF, } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import IslandScene from "../assets/3d/island.glb";
-
+import { raf } from "@react-spring/shared";
 type Props = {
     scale: number[];
     position: number[];
@@ -16,6 +16,13 @@ const Island = (props:Props) => {
     
   const { nodes, materials } = useGLTF(IslandScene);
 
+ useEffect(() => {
+    // Execute the animation (by advancing the frameloop) 30 times per second
+    const interval = setInterval(() => {
+      raf.advance();
+    }, 1000 / 30);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <a.group  ref={IslandRef} {...props} >
       <mesh

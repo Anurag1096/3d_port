@@ -24,7 +24,7 @@ function Navbar() {
         <NavLink
           to="/project"
           className={({ isActive }) =>
-            isActive ? `text-blue-500` : `text-black`
+            isActive ? `text-red-700` : `text-black`
           }
         >
           Project
