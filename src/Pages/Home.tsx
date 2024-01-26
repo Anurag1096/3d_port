@@ -1,16 +1,17 @@
-import { Suspense } from "react";
+import {useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../compoents/Loader";
 import Island from "../models/Island";
 import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
-import {useState} from 'react'
+
 
 
 const Home = () => {
  const [isRotating,setIsRotating]=useState(false)
-  const adjustIslandForScreenSize = () => {
+  
+ const adjustIslandForScreenSize = () => {
     let screenScale = null;
     const screenPosition = [0, -6.5, -43];
     const screenRotation = [0.1, 4.7, 0];
@@ -21,9 +22,25 @@ const Home = () => {
     }
     return [screenScale, screenPosition, screenRotation];
   };
+// Code for adjusting plane for screen size
+const adjustPlaneForScreenSize = () => {
+  let screenScale , screenPosition ;
+ 
+  if (window.innerWidth < 768) {
+    screenScale = [1.5,1.5,1.5];
+    screenPosition=[0,-1.5,0]
+  } else {
+    screenScale = [3,3,3];
+    screenPosition=[0,-4,-4]
+  }
+  return [screenScale, screenPosition,];
+};
 
   const [IslandScale, IslandPosition, IslandRotation] =
     adjustIslandForScreenSize();
+   
+   const [PlaneScale,PlanePosition]= adjustPlaneForScreenSize(); 
+
 
   return (
     <section className="w-full h-screen relative">
@@ -49,7 +66,12 @@ const Home = () => {
             isRotating={isRotating}
             setIsRotating={setIsRotating}
             />
-            <Plane/>
+            <Plane
+            isRotating={isRotating}
+            position={PlanePosition}
+            scale={PlaneScale}
+            rotation={[0,20,0]}
+            />
         </Suspense>
       </Canvas>
     </section>
