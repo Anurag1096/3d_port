@@ -11,10 +11,12 @@ type Props = {
   position: number[];
   rotation: number[];
   isRotating: boolean;
+  setCurrentStage: (b:number)=>void;
   setIsRotating: (a: boolean) => void;
 };
 
 const Island = (props: Props) => {
+  const{ setCurrentStage} = {...props}
   const IslandRef = useRef();
 
   const { nodes, materials } = useGLTF(IslandScene);
@@ -41,21 +43,22 @@ const Island = (props: Props) => {
     e.stopPropagation();
     e.preventDefault();
     if (props.isRotating) {
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const delta = (clientX - last_x.current) / viewport.width;
-    IslandRef.current.rotation.y += delta * 0.01 * Math.PI;
+    const rotationDelta = delta * .5 * Math.PI;
+    IslandRef.current.rotation.y += rotationDelta;
     last_x.current = clientX;
-    rotationSpeed.current += delta * 0.01 * Math.PI;
+    // rotationSpeed.current += rotationDelta;
     }
   };
 
  const handleKeyDown=(e)=>{
   if(e.key === "ArrowLeft"){
     if(!props.isRotating) props.setIsRotating(true);
-    IslandRef.current.rotation.y += 0.01 * Math.PI;
+    IslandRef.current.rotation.y += 0.5 * Math.PI;
   }else if( e.key === "ArrowRight"){
     if(!props.isRotating) props.setIsRotating(true);
-    IslandRef.current.rotation.y -= 0.01 * Math.PI;
+    IslandRef.current.rotation.y -= 0.5 * Math.PI;
   }
  }
  const handleKeyUp =(e)=>{

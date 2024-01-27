@@ -10,7 +10,7 @@ import Plane from "../models/Plane";
 
 const Home = () => {
  const [isRotating,setIsRotating]=useState(false)
-  
+  const [currentStage,setCurrentStage] = useState(1)
  const adjustIslandForScreenSize = () => {
     let screenScale = null;
     const screenPosition = [0, -6.5, -43];
@@ -44,9 +44,9 @@ const adjustPlaneForScreenSize = () => {
 
   return (
     <section className="w-full h-screen relative">
-      {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
    Popup
-   </div> */}
+   </div>
       <Canvas
         className={`w-full h-screen bg-transparent ${isRotating?"cursor-grabbing":"cursor-grab"}`}
         camera={{ near: 0.1, far: 1000 }}
@@ -58,13 +58,14 @@ const adjustPlaneForScreenSize = () => {
           <spotLight/>
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
           <Bird/>
-          <Sky/>
+          <Sky isRotating={isRotating}/>
           <Island
             position={IslandPosition}
             scale={IslandScale}
             rotation={IslandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
             />
             <Plane
             isRotating={isRotating}
