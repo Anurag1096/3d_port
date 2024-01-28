@@ -45,7 +45,7 @@ const Island = (props: Props) => {
     if (props.isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const delta = (clientX - last_x.current) / viewport.width;
-    const rotationDelta = delta * .5 * Math.PI;
+    const rotationDelta = delta * .03 * Math.PI;
     IslandRef.current.rotation.y += rotationDelta;
     last_x.current = clientX;
     // rotationSpeed.current += rotationDelta;
@@ -55,10 +55,10 @@ const Island = (props: Props) => {
  const handleKeyDown=(e)=>{
   if(e.key === "ArrowLeft"){
     if(!props.isRotating) props.setIsRotating(true);
-    IslandRef.current.rotation.y += 0.5 * Math.PI;
+    IslandRef.current.rotation.y += .03  * Math.PI;
   }else if( e.key === "ArrowRight"){
     if(!props.isRotating) props.setIsRotating(true);
-    IslandRef.current.rotation.y -= 0.5 * Math.PI;
+    IslandRef.current.rotation.y -= .03  * Math.PI;
   }
  }
  const handleKeyUp =(e)=>{
