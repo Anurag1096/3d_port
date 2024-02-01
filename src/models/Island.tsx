@@ -45,20 +45,32 @@ const Island = (props: Props) => {
     if (props.isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const delta = (clientX - last_x.current) / viewport.width;
-    const rotationDelta = delta * .03 * Math.PI;
+    const rotationDelta = delta * .009 * Math.PI;
     IslandRef.current.rotation.y += rotationDelta;
     last_x.current = clientX;
     // rotationSpeed.current += rotationDelta;
     }
   };
 
+  // const handleScroll=(e)=>{
+  //   e.stopPropagation();
+  // e.preventDefault();
+  
+  // if (props.isRotating) {
+  //   const delta = e.deltaY / viewport.width; // Use deltaY for scroll
+  //   const rotationDelta = delta * 0.009 * Math.PI;
+  //   console.log('Rotation Delta:', rotationDelta);
+  //   IslandRef.current.rotation.y += rotationDelta;
+  //   // You may need to adjust the rotation property based on your specific use case
+  // }
+  // }
  const handleKeyDown=(e)=>{
   if(e.key === "ArrowLeft"){
     if(!props.isRotating) props.setIsRotating(true);
-    IslandRef.current.rotation.y += .03  * Math.PI;
+    IslandRef.current.rotation.y += .009  * Math.PI;
   }else if( e.key === "ArrowRight"){
     if(!props.isRotating) props.setIsRotating(true);
-    IslandRef.current.rotation.y -= .03  * Math.PI;
+    IslandRef.current.rotation.y -= .009  * Math.PI;
   }
  }
  const handleKeyUp =(e)=>{
@@ -72,12 +84,14 @@ const Island = (props: Props) => {
      canvas.addEventListener('pointerdown',handlePointerDown);
      canvas.addEventListener("pointerup",handlePointerUp);
      canvas.addEventListener("pointermove", handlePointerMove)
+    //  canvas.addEventListener("wheel",handleScroll);
      document.addEventListener("keydown",handleKeyDown);
      document.addEventListener("keyup", handleKeyUp);
     return () => {
      canvas.removeEventListener("pointerdown",handlePointerDown);
      canvas.removeEventListener('pointerup',handlePointerUp);
      canvas.removeEventListener('pointermove',handlePointerMove);
+    //  canvas.removeEventListener("wheel",handleScroll);
      document.removeEventListener("keydown",handleKeyDown);
      document.removeEventListener("keyup",handleKeyUp);
     };

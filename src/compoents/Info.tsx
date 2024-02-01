@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {arrow} from '../assets/icons';
+import SpotlightButton from './SpotlightButton';
 type Props={
     currentStage:number;
 }
@@ -13,23 +14,21 @@ type InfoProps={
 const InfoArea=(infoProps:InfoProps)=>{
    const {text,link , btnText}=infoProps
        return (
-        <div className='info-box'>
+        <div className='info-box   '>
             <p className=' font-medium sm:text-xl text-center'> 
                 {text}
                 
                 </p>
-            <Link to={link} className=' neo-brutalism-white neo-btn'>
-                {btnText}
-                <img src={arrow}/>
-            </Link>
+         
+            <SpotlightButton btnText={btnText} link={link}/>
         </div>
        )
 }
 
 const renderTab = {
   1: (
-    <h1 className="sm:text-xl sm:leading-snug text-center  neo-brutalism-blue  py-4 px-8 text-white mx-5">
-      Hi, i am <span className=" font-semibold">Anurag</span> 👋
+    <h1 className="sm:text-xl sm:leading-snug  text-center  glassmorphism  py-4 px-8 text-black mx-5">
+      Hi, i am <span className=" font-semibold font-poppins">Anurag</span> 👋
       <br />A Frontend Engineer from India.
     </h1>
   ),
