@@ -111,57 +111,68 @@ export const skills = [
 
 export const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
+        title: "Frontend Engineer",
+        company_name: "Freelance",
         icon: starbucks,
         iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
+        date: "Aug 2023 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+
+            "Delivered scalable frontend solutions across 5+ products—including dashboards, marketingwebsites, and dynamic  UIcomponents—resulting in a 25% increase in development efficiency and improved UX consistency. ",
+            
+            "Built and maintained a shared UI component library using TypeScript andstyled-components,cutting redundant code by 40% and accelerating feature rollout by 30%.",
         ],
     },
     {
-        title: "React Native Developer",
-        company_name: "Tesla",
+        title: "Frontend Engineer",
+        company_name: "Wefuzz",
         icon: tesla,
         iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
+        date: "Nov 2022 - Jun 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Built a high-performance frontend dashboard for a bug bounty management app using TypeScript and Next.js, reducing page load time by 35%.",
+
+            "Supervised a junior frontend developer, enforcing coding standards and best practices, resulting in a 40% improvement in code review efficiency.",
+            
+            "Optimized website performance through code splitting, minification, and image compression, improving the Lighthouse performance score by 25%.",
         ],
     },
     {
-        title: "Web Developer",
-        company_name: "Shopify",
+        title: "Software Engineer",
+        company_name: "EagleOwl",
         icon: shopify,
         iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
+        date: "Aug 2021 - Oct 2022",
+        points:[
+            "Developed pixel-perfect, responsive webpages from design mockups, improved load times by 20%.",
+            "Developed and maintained responsive web applications using React, Redux, and JavaScript ES6, achieving 99.9% uptime and 25% faster feature deployment.",
+            "Partnered with cross-functional teams (design, QA, back-end) in 5+ projects to deliver user-centric applications, increasing user satisfaction scores by 15%, reducing integration bugs by 30%."
+          ],
+    },
+    {
+        title: "Software Engineer consultant",
+        company_name: "Threado",
+        icon: meta,
+        iconBg: "#a2d2ff",
+        date: "Jan 2021 - JUl 2021",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed interactive UI components using React and Next.js, boosting user engagement by 25% and reducing time-to-interaction by 40%.",
+  "Applied responsive design principles to ensure seamless performance, reducing mobile bounce rates by 30%.",
         ],
     },
     {
-        title: "Full stack Developer",
-        company_name: "Meta",
+        title: "Executive Software Engineer",
+        company_name:"Fabolic",
         icon: meta,
         iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
+        date: "Jul 2017 - Oct 2018",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
+            "Built and maintained a custom WordPress site with a responsive theme, 90+ PageSpeed score, custom plugin/API integrations.",
+            "Implemented SEO best practices and schema markup, increasing organic search traffic by 35%.",
+            "Integrated third-party analytics and tracking tools, improving user behavior insights and conversion optimization.",
+        ]
+    }
 ];
 
 export const socialLinks = [
@@ -173,12 +184,12 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/Anurag1096',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'www.linkedin.com/in/anurag-chakravarty-832338a6',
     }
 ];
 

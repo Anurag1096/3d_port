@@ -55,49 +55,56 @@ function About() {
         </div>
         <div className="mt-12 flex">
           <VerticalTimeline>
-            {experiences.map((exp) => {
-              return (
-                <VerticalTimelineElement
-                  key={exp.company_name} 
-                  date={exp.date}
-                  icon={
+            {experiences.map((exp, index) => (
+              <VerticalTimelineElement
+                key={exp.company_name}
+                date={exp.date}
+                icon={
                   <div className="flex justify-center items-center w-full h-full">
-                    <img src={exp.icon} alt={exp.company_name} 
-                    className="w-[60%] h-[60%] object-contain"/>
-                  </div>}
-                  iconStyle={{background:exp.iconBg}}
-                  contentStyle={
-                    {
-                      borderBottom:'8px',
-                      borderStyle:'solid',
-                      borderBottomColor:exp.iconBg,
-                      boxShadow:'none'
-                    }
-                  }
-                >
-                  <div>
-                    <h3 className="text-black text-xl font-poppins font-semibold">
-                      {exp.title}
-                    </h3>
-                    <p className="text-slate-500 font-medium font-base" style={{margin:0}}>{exp.company_name}</p>
-                  
+                    <img
+                      src={exp.icon}
+                      alt={exp.company_name}
+                      className="w-[60%] h-[60%] object-contain"
+                    />
                   </div>
-                  <ul className="my-5 list-disc ml-5 space-y-2">
-                    {experiences.map((exp,index)=>(
-                      <li key={`experience-points-${index}`}
+                }
+                iconStyle={{ background: exp.iconBg }}
+                contentStyle={{
+                  borderBottom: "8px",
+                  borderStyle: "solid",
+                  borderBottomColor: exp.iconBg,
+                  boxShadow: "none",
+                }}
+              >
+                <div>
+                  <h3 className="text-black text-xl font-poppins font-semibold">
+                    {exp.title}
+                  </h3>
+                  <p
+                    className="text-slate-500 font-medium font-base"
+                    style={{ margin: 0 }}
+                  >
+                    {exp.company_name}
+                  </p>
+                </div>
+
+                <ul className="my-5 list-disc ml-5 space-y-2">
+                  {exp.points.map((point, idx) => (
+                    <li
+                      key={`experience-point-${index}-${idx}`}
                       className="text-black-500/50 font-normal pl-1 text-sm"
-                      >{exp.points}</li>
-                    ))}
-                    
-                  </ul>
-                </VerticalTimelineElement>
-              );
-            })}
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </VerticalTimelineElement>
+            ))}
           </VerticalTimeline>
         </div>
       </div>
-      <hr className="border-slate-200"/>
-      <CTA/>
+      <hr className="border-slate-200" />
+      <CTA />
     </section>
   );
 }
