@@ -2,7 +2,12 @@ import React from 'react'
 
 function Home2() {
   return (
-    <div>Home2</div>
+    <section  className='w-screen h-screen '>
+
+      <h4>Anurag</h4>
+    
+    
+    </section>
   )
 }
 
