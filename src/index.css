@@ -25,25 +25,29 @@ body:has(.card[data-color="green"]:hover) {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
-  .custom-div::before,
+  /* .custom-div::before,
   .custom-div::after {
     content: "";
     position: absolute;
-    width: 13rem; /* Customize the size */
-    height: 3rem; /* Customize the size */
-    background-color: rgba(0, 0, 0, 0.1); /* Customize the background */
-    border-radius: 50%; /* Example: circular shape */
-  }
+    width: 13rem; 
+     height: 3rem;  
+   background-color: rgba(201, 203, 16, 1 );
+    border-radius: 0 10px 10px 10px; 
+} */
 
-  .custom-div::before {
-    top: 5.5rem; /* Adjust position */
-    left: 15rem; /* Adjust position */
-  }
-
+  /* .custom-div::before {
+    top: 5.5rem;
+    left: 15rem; 
+  } */
+  
+/*  
   .custom-div::after {
-    bottom: 5.5rem; /* Adjust position */
-    right: 15rem; /* Adjust position */
-  }
+    bottom: 5.5rem;
+    right: 15rem; 
+   } */
+
+
+
   .head-text {
     @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
   }
