@@ -1,4 +1,5 @@
 import * as React from "react";
+import { motion } from "framer-motion";
 const SVGGroup = (props) => (
   <svg
     width={165}
