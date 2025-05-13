@@ -1,13 +1,23 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+
+const MotionDiv=motion.div;
 const SVGGroup = (props) => (
+  
+
+<MotionDiv 
+  initial={{ x: "-100vw" }}
+  animate={{ x: 220 ,y:10}}
+  transition={{ duration: 1, type: "spring", stiffness: 40 }}
+  {...props}
+>
   <svg
     width={165}
     height={53}
     viewBox="0 0 165 53"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
+    
   >
     <rect
       x={14.2891}
@@ -64,5 +74,6 @@ const SVGGroup = (props) => (
       fill="white"
     />
   </svg>
+  </MotionDiv>
 );
 export default SVGGroup;

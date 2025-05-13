@@ -11,7 +11,7 @@ function Home2() {
       
       </div>
       <div className=" w-11/12 sm:w-4/5 md:w-3/4 lg:max-w-screen-xl  relative">
-      <SVGGroup className="hidden sm:inline-block absolute bottom-0 left-0 w-4/5 md:w-3/4 lg:max-w-screen-sm h-9 "/>
+      <SVGGroup className="hidden md:inline-block absolute bottom-0 left-0 w-4/5 md:w-3/4 lg:max-w-screen-sm h-9 "/>
 
       </div>
     </section>
