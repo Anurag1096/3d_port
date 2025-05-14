@@ -1,15 +1,14 @@
 import hero from './hero.jpg'
-import meta from './meta.png'
-import shopify from './shopify.png'
-import starbucks from './starbucks.png'
-import tesla from './tesla.png'
 import logo from './logo.svg'
-
+import threado from './threado.jpg'
+import wefuzz from './wefuzz.jpeg'
+import eagleowl from './eagleowl.jpeg'
+import fabolic from './fabolic.png'
 export {
     hero,
-    meta,
-    shopify,
-    starbucks,
-    tesla,
+    eagleowl,
+    fabolic,
+    wefuzz,
+    threado,
     logo
 }

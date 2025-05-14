@@ -8,7 +8,7 @@ function App() {
 
   return (
     
-    <main className=' bg-slate-300/20 h-full'>
+    <main className=' bg-[#08113A] h-full'>
 
     <Router>
       <Navbar/>

@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { wefuzz,threado,eagleowl,fabolic } from "../assets/images";
 import {
     car,
     contact,
@@ -23,7 +23,8 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    designer,
 } from "../assets/icons";
 
 export const skills = [
@@ -113,7 +114,7 @@ export const experiences = [
     {
         title: "Frontend Engineer",
         company_name: "Freelance",
-        icon: starbucks,
+        icon: designer,
         iconBg: "#accbe1",
         date: "Aug 2023 - Present",
         points: [
@@ -127,7 +128,7 @@ export const experiences = [
     {
         title: "Frontend Engineer",
         company_name: "Wefuzz",
-        icon: tesla,
+        icon: wefuzz,
         iconBg: "#fbc3bc",
         date: "Nov 2022 - Jun 2023",
         points: [
@@ -141,7 +142,7 @@ export const experiences = [
     {
         title: "Software Engineer",
         company_name: "EagleOwl",
-        icon: shopify,
+        icon: eagleowl,
         iconBg: "#b7e4c7",
         date: "Aug 2021 - Oct 2022",
         points:[
@@ -153,7 +154,7 @@ export const experiences = [
     {
         title: "Software Engineer consultant",
         company_name: "Threado",
-        icon: meta,
+        icon: threado,
         iconBg: "#a2d2ff",
         date: "Jan 2021 - JUl 2021",
         points: [
@@ -164,7 +165,7 @@ export const experiences = [
     {
         title: "Executive Software Engineer",
         company_name:"Fabolic",
-        icon: meta,
+        icon: fabolic,
         iconBg: "#a2d2ff",
         date: "Jul 2017 - Oct 2018",
         points: [
