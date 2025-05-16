@@ -3,34 +3,44 @@ import Loader from "../compoents/Loader";
 import SVGComponent from "../compoents/svgComp";
 import SVGComponentMask from "../compoents/svgmask";
 import SVGGroup from "../compoents/SVGGroup";
-import TypingComp from "../compoents/TypingComp";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
+
 function Home2() {
   return (
     <section className="w-screen h-screen relative overflow-hidden z-0">
       <Suspense fallback={<Loader />}>
-      
-        <div>
-          <SVGComponent className="w-11/12 sm:w-4/5 md:w-3/4 lg:max-w-screen-xl h-96 mx-auto mt-36 relative z-0" />
-          <SVGComponentMask className="w-11/12 sm:w-4/5 md:w-3/4 lg:max-w-screen-xl h-96 mx-auto mt-36 absolute inset-0 z-10" />
-        </div>
-        <div className=" w-11/12 sm:w-4/5 md:w-3/4 lg:max-w-screen-xl  relative">
-          <SVGGroup className="hidden md:inline-block absolute bottom-0 left-0 w-4/5 md:w-3/4 lg:max-w-screen-sm h-9 " />
+        {/* Container for SVG and Typing */}
+        <div className="relative w-11/12 sm:w-4/5 md:w-3/4 lg:max-w-[843px] h-96 mx-auto mt-36">
+          {/* Background SVG */}
+          <SVGComponent className="w-full h-full relative z-0" />
+          {/* Foreground mask */}
+          <SVGComponentMask className="absolute inset-0 w-full h-full z-10" />
+
+          {/* Typing animation over both - now responsive */}
+          {/* Typing animation on the left side - responsive & constrained */}
+          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-20 pl-4 sm:pl-6  md:px-12 md:w-80  md:flex md:justify-between md:items-center ">
+            <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-left">
+              <TypeAnimation
+                sequence={[
+                  "Frontend engineer. Backend explorer. Let’s create something amazing.",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ fontSize: "1.25em", display: "inline-block" }}
+                repeat={Infinity}
+                className="text-blue"
+              />
+            </div>
+            <div>
+              <h1>hi</h1>
+            </div>
+          </div>
         </div>
 
-        <div className='text-white max-w-[250px] min-h-[4rem]'>
-        {/* <TypingComp  text={'This is my profile '} speed={150} /> */}
-        <TypeAnimation
-      sequence={[
-        // Same substring at the start will only be typed out once, initially
-        'We produce food for Mice',
-        1000, // wait 1s before replacing "Mice" with "Hamsters"
-      ]}
-      wrapper="span"
-      speed={50}
-      style={{ fontSize: '1.5em', display: 'inline-block' }}
-      repeat={Infinity}
-    />
+        {/* SVG Group at bottom */}
+        <div className="w-11/12 sm:w-4/5 md:w-3/4 lg:max-w-[843px] relative">
+          <SVGGroup className="hidden md:inline-block absolute bottom-0 left-0 w-4/5 md:w-3/4 lg:max-w-[843px] h-9" />
         </div>
       </Suspense>
     </section>
