@@ -97,7 +97,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .cta-text {
-    @apply text-white font-extrabold flex-1 text-3xl max-md:text-center;
+    @apply text-black font-extrabold flex-1 text-3xl max-md:text-center;
   }
 }
 

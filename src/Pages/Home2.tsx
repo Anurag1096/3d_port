@@ -5,6 +5,7 @@ import SVGComponentMask from "../compoents/svgmask";
 import SVGGroup from "../compoents/SVGGroup";
 import { TypeAnimation } from "react-type-animation";
 
+
 function Home2() {
   return (
     <section className="w-screen h-screen relative overflow-hidden z-0">
@@ -18,8 +19,9 @@ function Home2() {
 
           {/* Typing animation over both - now responsive */}
           {/* Typing animation on the left side - responsive & constrained */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-20 pl-4 sm:pl-6  md:px-12 md:w-80  md:flex md:justify-between md:items-center ">
-            <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg text-left">
+          <div className="absolute font-semibold top-1/2 left-0 transform -translate-y-1/2 z-20 pl-4 sm:pl-6  md:px-12 md:max-w-4xl  md:flex md:justify-between md:items-center ">
+
+            <div className="max-w-xs  sm:max-w-sm md:max-w-md lg:max-w-xl text-left">
               <TypeAnimation
                 sequence={[
                   "Frontend engineer. Backend explorer. Let’s create something amazing.",
@@ -27,13 +29,13 @@ function Home2() {
                 ]}
                 wrapper="span"
                 speed={50}
-                style={{ fontSize: "1.25em", display: "inline-block" }}
+                style={{ fontSize: "1.5em", display: "inline-block", }}
                 repeat={Infinity}
                 className="text-blue"
               />
             </div>
-            <div>
-              <h1>hi</h1>
+            <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+             
             </div>
           </div>
         </div>

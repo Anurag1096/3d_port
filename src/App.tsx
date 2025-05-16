@@ -2,18 +2,18 @@
 // import './App.css'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Navbar from './compoents/Navbar'
-import {Home,About,Projects,Contact,Home2} from "./Pages";
+import {About,Projects,Contact,Home3} from "./Pages";
 function App() {
   
 
   return (
     
-    <main className=' bg-[#08113A] h-full'>
+    <main className=' bg-slate-300/20 h-full'>
 
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/"  element={<Home2/>}/>
+        <Route path="/"  element={<Home3/>}/>
         <Route path="/about"  element={<About/>}/>
         <Route path="/project"  element={<Projects/>}/>
         <Route path="/contact"  element={<Contact/>}/>

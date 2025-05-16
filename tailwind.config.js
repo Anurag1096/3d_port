@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundSize: {
+      '200': '200%',
+    },
+    backgroundPosition: {
+      'bottom-center': 'bottom center',
+    },
       colors: {
         gray: {
           200: "#D5DAE1"
