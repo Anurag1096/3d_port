@@ -4,6 +4,7 @@ import SVGComponent from "../compoents/svgComp";
 import SVGComponentMask from "../compoents/svgmask";
 import SVGGroup from "../compoents/SVGGroup";
 import TypingComp from "../compoents/TypingComp";
+import { TypeAnimation } from 'react-type-animation';
 function Home2() {
   return (
     <section className="w-screen h-screen relative overflow-hidden z-0">
@@ -17,8 +18,19 @@ function Home2() {
           <SVGGroup className="hidden md:inline-block absolute bottom-0 left-0 w-4/5 md:w-3/4 lg:max-w-screen-sm h-9 " />
         </div>
 
-        <div className='text-white'>
-        <TypingComp  text={'hi this is anurag a useless software engineer who does not know any thing in life and is planning to end it.'} speed={100} />
+        <div className='text-white max-w-[250px] min-h-[4rem]'>
+        {/* <TypingComp  text={'This is my profile '} speed={150} /> */}
+        <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'We produce food for Mice',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: '1.5em', display: 'inline-block' }}
+      repeat={Infinity}
+    />
         </div>
       </Suspense>
     </section>

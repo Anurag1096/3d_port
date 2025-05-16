@@ -4,18 +4,19 @@ interface Props{
     text:string;
     speed:number;
 }
+// need more work
 function TypingComp({ text, speed }:Props ) {
   const [displayText, setDisText] = useState<string>("");
-
+  const [index,setIndex] =useState<number>(0)
   useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setDisText((prev) => prev + text.charAt(index));
-      index++;
-      if (index === text.length) clearInterval(interval);
-    });
-    return () => clearInterval(interval);
-  }, [text, speed]);
+    if(index < text.length){
+      const timer=setTimeout(()=>{
+        setDisText(text.substring(0,index + 1))
+        setIndex(index + 1)
+      })
+      return ()=> clearInterval(timer)
+    }
+  }, [index,text, speed]);
 
   return (
     <motion.p
