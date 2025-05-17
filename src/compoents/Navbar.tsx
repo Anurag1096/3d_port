@@ -26,7 +26,7 @@ function Navbar({darkMode, setMode}:Props) {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-           `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-black dark:text-white'}`
+           `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'nav-link'}`
 
           }
         >
@@ -35,7 +35,7 @@ function Navbar({darkMode, setMode}:Props) {
         <NavLink
           to="/project"
           className={({ isActive }) =>
-            `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-black dark:text-white'}`
+            `transition-colors duration-300 ${isActive ? 'text-red-500' : 'nav-link'}`
 
           }
         >
@@ -44,13 +44,13 @@ function Navbar({darkMode, setMode}:Props) {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-black dark:text-white'}`
+            `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'nav-link'}`
 
           }
         >
           Contact
         </NavLink>
-        <div onClick={handleMode} className="btn-front rounded-xl flex justify-center  items-center cursor-pointer  bg-yellow-200 dark:bg-yellow-700 p-2  ">
+        <div onClick={handleMode} className="btn-front rounded-xl flex justify-center  items-center cursor-pointer  light-bulb p-2  ">
           <img
             src={bulb}
             alt="light-bulb"

@@ -3,7 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@custom-variant dark (&:where(.dark, .dark *));
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
@@ -28,7 +28,7 @@ body:has(.card[data-color="green"]:hover) {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
-  /* .custom-div::before,
+  .custom-div::before,
   .custom-div::after {
     content: "";
     position: absolute;
@@ -36,18 +36,18 @@ body:has(.card[data-color="green"]:hover) {
      height: 3rem;  
    background-color: rgba(201, 203, 16, 1 );
     border-radius: 0 10px 10px 10px; 
-} */
+}
 
-  /* .custom-div::before {
+  .custom-div::before {
     top: 5.5rem;
     left: 15rem; 
-  } */
+  }
   
-/*  
+
   .custom-div::after {
     bottom: 5.5rem;
     right: 15rem; 
-   } */
+   }
 
 
 
@@ -101,6 +101,22 @@ body:has(.card[data-color="green"]:hover) {
 
   .cta-text {
     @apply text-black font-extrabold flex-1 text-3xl max-md:text-center;
+  }
+  
+  .dark .cta-text {
+    @apply text-white;
+  }
+  .nav-link {
+    @apply text-black;
+  }
+  .dark .nav-link {
+    @apply text-white;
+  }
+  .light-bulb{
+    @apply bg-yellow-200 brightness-100;
+  }
+  .dark .light-bulb{
+    @apply bg-yellow-700 brightness-50;
   }
 }
 
