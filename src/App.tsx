@@ -1,17 +1,28 @@
 
 // import './App.css'
+import {useState,useEffect} from "react"
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Navbar from './compoents/Navbar'
 import {About,Projects,Contact,Home3} from "./Pages";
 function App() {
+  const [darkMode , setDarkMode] = useState<boolean>(false)
   
-
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [darkMode]);
   return (
     
-    <main className=' bg-slate-300/20 h-full'>
+    <main className="min-h-screen transition-colors duration-300 ">
 
+    
     <Router>
-      <Navbar/>
+      <Navbar darkMode={darkMode} setMode={setDarkMode}/>
+      
       <Routes>
         <Route path="/"  element={<Home3/>}/>
         <Route path="/about"  element={<About/>}/>
@@ -20,7 +31,7 @@ function App() {
 
       </Routes>
     </Router>
-
+   
     </main>
 
 

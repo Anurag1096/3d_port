@@ -12,7 +12,10 @@
 body {
   font-family: "Work Sans", sans-serif;
 }
-
+.dark body {
+  background-color: #111827; /* Tailwind gray-900 */
+  color: white;
+}
 body:has(.card[data-color="blue"]:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
 }

@@ -1,6 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-function Navbar() {
+import bulb from "../assets/images/bulb.png";
+type Props={
+  darkMode:boolean;
+  setMode:(a:boolean)=> void;
+}
+function Navbar({darkMode, setMode}:Props) {
+
+ const handleMode=()=>{
+  setMode(!darkMode)
+ }
+
   return (
     <header className="header">
       <NavLink
@@ -16,7 +26,8 @@ function Navbar() {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? `text-blue-500` : `text-black`
+           `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-black dark:text-white'}`
+
           }
         >
           About
@@ -24,7 +35,8 @@ function Navbar() {
         <NavLink
           to="/project"
           className={({ isActive }) =>
-            isActive ? `text-red-700` : `text-black`
+            `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-black dark:text-white'}`
+
           }
         >
           Project
@@ -32,11 +44,19 @@ function Navbar() {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? `text-blue-500` : `text-black`
+            `transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-black dark:text-white'}`
+
           }
         >
           Contact
         </NavLink>
+        <div onClick={handleMode} className="btn-front rounded-xl flex justify-center  items-center cursor-pointer  bg-yellow-200 dark:bg-yellow-700 p-2  ">
+          <img
+            src={bulb}
+            alt="light-bulb"
+            className={`w-5 h-5 object-contain ${darkMode ? 'rotate-180' : ''} transition-transform duration-300`}
+          />
+        </div>
       </nav>
     </header>
   );
