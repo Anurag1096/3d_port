@@ -15,7 +15,7 @@ function Navbar({darkMode, setMode}:Props) {
     <header className="header">
       <NavLink
         to="/"
-        className="w-10 h-10 rounded-lg bg-white 
+        className="w-10 h-10 rounded-lg bg-[#FFFAFA] 
         items-center flex justify-center font-bold  shadow-md
         "
       >

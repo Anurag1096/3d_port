@@ -17,7 +17,7 @@ function App() {
   }, [darkMode]);
   return (
     
-    <main className="bg-slate-300/20 min-h-screen transition-colors duration-300 ">
+    <main className=" min-h-screen transition-colors duration-700 ">
 
     
     <Router>

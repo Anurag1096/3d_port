@@ -11,9 +11,10 @@
 
 body {
   font-family: "Work Sans", sans-serif;
+  background-color:#FFFAFA
 }
 .dark body {
-  background-color: #111827; /* Tailwind gray-900 */
+  background-color: #041824; /* Tailwind gray-900 */
   color: white;
 }
 body:has(.card[data-color="blue"]:hover) {
@@ -52,13 +53,18 @@ body:has(.card[data-color="green"]:hover) {
 
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
-  }
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-black;
 
+  }
+  .dark .head-text{
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-[#FFFAFA];
+  }
   .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins text-black;
   }
-
+  .dark .subhead-text {
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins text-[#FFFAFA];
+  }
   .orrange-gradient_text {
     @apply bg-gradient-to-r from-[#f87408] to-[#ff0000] bg-clip-text text-transparent;
   }
@@ -88,7 +94,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
+    @apply mx-5 relative flex text-[#FFFAFA] flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
   }
 
   .neo-btn {
@@ -96,7 +102,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+    @apply w-full text-[#FFFAFA] flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
   }
 
   .cta-text {
@@ -104,13 +110,13 @@ body:has(.card[data-color="green"]:hover) {
   }
   
   .dark .cta-text {
-    @apply text-white;
+    @apply text-[#FFFAFA];
   }
   .nav-link {
-    @apply text-black;
+    @apply text-black ;
   }
   .dark .nav-link {
-    @apply text-white;
+    @apply text-[#FFFAFA];
   }
   .light-bulb{
     @apply bg-yellow-200 brightness-100;
