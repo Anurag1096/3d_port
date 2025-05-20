@@ -5,6 +5,7 @@ import { BrowserRouter as Router,Routes,Route, NavLink } from 'react-router-dom'
 import Navbar from './compoents/Navbar'
 import SideBar from "./compoents/SidebarNav";
 import {About,Projects,Contact,Home3} from "./Pages";
+import Hamburg from "./compoents/HamBurger";
 function App() {
   const [darkMode , setDarkMode] = useState<boolean>(false)
   const [openSidebar,setCloseSidebar] =useState<boolean>(false)
@@ -31,7 +32,7 @@ const handelSideBarOpen=()=>{
     
     
     <Router>
-      <div onClick={handelSideBarOpen} className="inline w-screen  flex justify-between relative top-4 right-10 md:hidden">
+      <div  className="inline w-screen  flex justify-between items-center p-5 md:hidden">
        
         <NavLink
               to="/"
@@ -41,7 +42,7 @@ const handelSideBarOpen=()=>{
             >
               <p className="text-blue-500">AC</p>
             </NavLink>
-      <h1 >open</h1>
+         <Hamburg onClick={handelSideBarOpen} className="w-5 h-5"/>
       </div>
       <div className="inline w-screen flex justify-end relative top-4 right-10 md:hidden ">
         <SideBar openSidebar={openSidebar} setCloseSidebar={setCloseSidebar} darkMode={darkMode} setMode={setDarkMode}/>
