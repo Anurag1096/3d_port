@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+  // Immediately set the dark class if the user prefers dark mode
+  try {
+    const darkPref = localStorage.getItem('darkVal');
+    if (darkPref === 'true') {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) {
+    console.error('Dark mode script error', e);
+  }
+</script>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>

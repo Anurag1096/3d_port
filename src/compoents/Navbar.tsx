@@ -9,6 +9,7 @@ function Navbar({darkMode, setMode}:Props) {
 
  const handleMode=()=>{
   setMode(!darkMode)
+   localStorage.setItem('darkVal', JSON.stringify(!darkMode));
  }
 
   return (
@@ -22,7 +23,7 @@ function Navbar({darkMode, setMode}:Props) {
         <p className="text-blue-500">AC</p>
       </NavLink>
 
-      <nav className="flex text-lg gap-7 font-medium">
+      <nav className="flex items-center text-lg gap-7 font-medium">
         <NavLink
           to="/about"
           className={({ isActive }) =>
