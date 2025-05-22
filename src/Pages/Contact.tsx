@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
+
+
+
 function Contact() {
-  const fromRef=useRef(null);
+  const formRef=useRef();
   const [form ,setForm] = useState({name:"", email:"",message:""})
   const [isLoading,setIsLoading] = useState(false)
   // code to handle form data
@@ -9,10 +12,25 @@ function Contact() {
     setForm({...form, [e.target.name]:e.target.value})
   }
   // code to handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
   e.preventDefault()
   setIsLoading(true)
-  // Complete it later.
+   
+  emailjs
+      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, {
+        publicKey: 'YOUR_PUBLIC_KEY',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          setIsLoading(false)
+
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setIsLoading(false);
+        },
+      );
   };
 
   const handleFocus=()=>{
@@ -21,13 +39,13 @@ function Contact() {
   const handleBlur=()=>{
   }
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex  max-container md:justify-center">
       {/* Contact section */}
-      <div className="flex-1 min-w-[50%] flex flex-col">
+      <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
         <h1 className="head-text">Get in touch</h1>
 
-        <form className="w-full flex flex-col gap-7 mt-14" onSubmit={handleSubmit}>
-          <label className="text-black-500 font-semibold">
+        <form ref={formRef} className="w-full flex flex-col gap-7 mt-14 md:mt-4" onSubmit={handleSubmit}>
+          <label className="text-black-500 dark:text-[#FFFAFA] font-semibold">
             <div>
               Name
               </div>
@@ -37,7 +55,7 @@ function Contact() {
             onBlur={handleBlur}
             />
           </label>
-          <label className="text-black-500 font-semibold">
+          <label className="text-black-500 dark:text-[#FFFAFA] font-semibold">
             <div>Email</div>
             <input type="email" name="email" className="input" placeholder="John@abc.com" required value={form.email}
             onChange={handleChange}
@@ -45,7 +63,7 @@ function Contact() {
             onBlur={handleBlur}
             />
           </label>
-          <label className="text-black-500 font-semibold">
+          <label className="text-black-500 dark:text-[#FFFAFA] font-semibold">
             <div>Message</div>
             <textarea name="message" rows={4} className="textarea" placeholder="John" required value={form.message}
             onChange={handleChange}
