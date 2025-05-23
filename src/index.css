@@ -29,6 +29,9 @@ body:has(.card[data-color="green"]:hover) {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
+  .max-container-2{
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[86px] px-8 min-h-[calc(100vh-80px)]
+  }
   .custom-div::before,
   .custom-div::after {
     content: "";

@@ -8,6 +8,8 @@ function Contact() {
   const [form ,setForm] = useState({name:"", email:"",message:""})
   const [isLoading,setIsLoading] = useState(false)
   // code to handle form data
+  
+  const iconList=[{iconName:"",iconUrl:''},{iconName:"",iconUrl:''},{iconName:"",iconUrl:''}]
   const handleChange=(e)=>{
     setForm({...form, [e.target.name]:e.target.value})
   }
@@ -39,7 +41,7 @@ function Contact() {
   const handleBlur=()=>{
   }
   return (
-    <section className="relative flex  flex-col-reverse max-container md:justify-between md:flex-row">
+    <section className="relative flex  flex-col-reverse max-container-2 md:justify-between md:flex-row">
       {/* Contact section */}
       <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
         <h1 className="head-text">Get in touch</h1>
@@ -77,11 +79,32 @@ function Contact() {
         </form>
       </div>
       <div className="flex flex-col-reverse  m-auto md:flex-row  ">
-        <div className="text-balack dark:text-[#FFFAFA]">OR</div>
-        <div className="">
-        <span className="p-4" >icon</span>
-        <span className="p-4" >icon</span>
-        <span className="p-4">icon</span>   
+        <div className="bg-black dark:bg-[#FFFAFA] h-px w-inherit my-10 md:hidden "></div>
+        <div className="hidden md:inline-block md:bg-black md:dark:bg-[#FFFAFA]  md:h-48 md:w-px md:mx-10 "></div>
+
+        <div className="flex ">
+            {iconList.map(()=>(
+             <div className="block-container w-14 h-14 m-4  md:w-20 md:h-20 md:m-8">
+                <div className="btn-back rounded-xl" />
+                <div
+                  className="btn-front  rounded-xl flex justify-center
+                item-center
+                "
+                >
+                  {/* <img
+                    className="w-1/2 h-1/2 object-contain"
+                    src={item.imageUrl}
+                    alt={item.name}
+                  /> */}
+                  icon
+                </div>
+              </div>
+            ))
+
+            }
+           
+        
+      
         </div>
       </div>
     </section>
