@@ -39,7 +39,7 @@ function Contact() {
   const handleBlur=()=>{
   }
   return (
-    <section className="relative flex  max-container md:justify-center">
+    <section className="relative flex  flex-col-reverse max-container md:justify-between md:flex-row">
       {/* Contact section */}
       <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
         <h1 className="head-text">Get in touch</h1>
@@ -75,6 +75,14 @@ function Contact() {
             {isLoading?"Sending...":"Send message"}
           </button>
         </form>
+      </div>
+      <div className="flex flex-col-reverse  m-auto md:flex-row  ">
+        <div className="text-balack dark:text-[#FFFAFA]">OR</div>
+        <div className="">
+        <span className="p-4" >icon</span>
+        <span className="p-4" >icon</span>
+        <span className="p-4">icon</span>   
+        </div>
       </div>
     </section>
   );
