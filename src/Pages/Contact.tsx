@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
-
+import {linkedin,twitter} from "../assets/icons"
 
 
 function Contact() {
@@ -9,7 +9,7 @@ function Contact() {
   const [isLoading,setIsLoading] = useState(false)
   // code to handle form data
   
-  const iconList=[{iconName:"",iconUrl:''},{iconName:"",iconUrl:''},{iconName:"",iconUrl:''}]
+  const iconList=[{iconName:"linkedin",iconUrl:linkedin},{iconName:"twitter",iconUrl:twitter},{iconName:"",iconUrl:''}]
   const handleChange=(e)=>{
     setForm({...form, [e.target.name]:e.target.value})
   }
@@ -83,20 +83,21 @@ function Contact() {
         <div className="hidden md:inline-block md:bg-black md:dark:bg-[#FFFAFA]  md:h-48 md:w-px md:mx-10 "></div>
 
         <div className="flex ">
-            {iconList.map(()=>(
-             <div className="block-container w-14 h-14 m-4  md:w-20 md:h-20 md:m-8">
+            {iconList.map((item)=>(
+             <div className="block-container cursor-pointer w-14 h-14 m-4  md:w-20 md:h-20 md:m-8">
                 <div className="btn-back rounded-xl" />
                 <div
                   className="btn-front  rounded-xl flex justify-center
                 item-center
                 "
                 >
-                  {/* <img
-                    className="w-1/2 h-1/2 object-contain"
-                    src={item.imageUrl}
-                    alt={item.name}
-                  /> */}
-                  icon
+                  
+                  <img
+                    className="w-1/2 h-1/2 object-contain "
+                    src={item.iconUrl}
+                    alt={item.iconName}
+                  />
+                  
                 </div>
               </div>
             ))
