@@ -113,6 +113,7 @@ function Contact() {
               <div className="btn-back rounded-xl" />
               <a
                 href={item.iconLink}
+                target="blank"
                 className="btn-front  rounded-xl flex justify-center
                 item-center
                 "
