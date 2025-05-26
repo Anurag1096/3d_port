@@ -27,9 +27,9 @@ const SideBar = (props: Props) => {
 // -------------------------Start of return------------------------
   return (
     <>
-   
+     {/* the sidebar design need fixing */}
       <div
-        className={openSidebar ? `main_wrapper2` : "main_wrapper"}
+        className={openSidebar ? `main_wrapper2 bg-[#041824] dark:bg-[#FFFAFA]` : "main_wrapper bg-[#041824A6] dark:bg-[#FFFAFA]"}
         aria-label="Sidebar"
       >
         <div className="flex justify-between">

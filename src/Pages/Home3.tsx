@@ -1,22 +1,22 @@
 import React, { Suspense } from "react";
 import { Loader } from "@react-three/drei";
 import { motion } from "framer-motion";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 function Home3() {
-  const history=useNavigate()
-  const buttonClick=()=>{
-    history('/contact')
-  }
+  const history = useNavigate();
+  const buttonClick = () => {
+    history("/contact");
+  };
   return (
-    <section className="w-screen h-screen  overflow-hidden">
+    <section className=" min-h-screen  overflow-x-hidden w-full">
       <Suspense fallback={<Loader />}>
         <section
           id="hero-section"
-          className="flex justify-center  w-screen h-screen bg-inherit"
+          className="flex justify-center  w-full min-h-screen bg-inherit"
         >
           <div
             id="container"
-            className="text-center mt-20 sm:mt-40  lg:max-w-3xl px-4"
+            className="text-center mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
           >
             <motion.h1
               className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4"
@@ -24,7 +24,9 @@ function Home3() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Crafting Fast, <span className="text-[#2589FABD]"> Responsive</span>, and Accessible Web Experiences
+              Crafting Fast,{" "}
+              <span className="text-[#2589FABD]"> Responsive</span>, and
+              Accessible Web Experiences
             </motion.h1>
 
             <motion.h2
@@ -58,6 +60,15 @@ function Home3() {
             >
               Let’s Connect
             </motion.button>
+          </div>
+        </section>
+        <section id="about-section" className="flex flex-col items-center  min-h-screen w-full sm:flex-row sm:justify-center    bg-inherit">
+          <div>
+               <h1>hii</h1>
+
+          </div>
+          <div>
+            <span>images</span>
           </div>
         </section>
       </Suspense>

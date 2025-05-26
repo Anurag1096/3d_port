@@ -44,7 +44,7 @@ function App() {
   // -----------------------------------------
 
   return (
-    <main className=" min-h-screen transition-colors duration-700 ">
+    <main className=" min-h-screen transition-colors duration-1000 ">
       <Router>
         <div className="inline w-screen  flex justify-between items-center p-5 md:hidden">
           <NavLink
