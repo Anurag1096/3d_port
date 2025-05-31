@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Loader } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-const SVGPerson = React.lazy(() => import('../compoents/svgPerson'));
+const SVGPerson = React.lazy(() => import("../compoents/svgPerson"));
 
 function Home3() {
   const history = useNavigate();
@@ -10,15 +10,16 @@ function Home3() {
     history("/contact");
   };
   return (
-    <section className=" min-h-screen  overflow-x-hidden w-full">
+    <section className=" min-h-screen  overflow-x-hidden w-full   z-0">
       <Suspense fallback={<Loader />}>
         <section
           id="hero-section"
-          className="flex justify-center  w-full min-h-screen bg-inherit"
+          className="flex justify-center  w-full md:min-h-screen bg-inherit"
         >
+          {/* need to work on it */}
           <div
             id="container"
-            className="text-center mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
+            className="text-center h-[600px] mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
           >
             <motion.h1
               className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4"
@@ -64,15 +65,21 @@ function Home3() {
             </motion.button>
           </div>
         </section>
-        <section id="about-section" className="flex flex-col items-center  min-h-screen w-full sm:flex-row sm:justify-center    bg-inherit">
+        <motion.section
+          id="about-section"
+          className="flex flex-col rounded-t-3xl z-10 items-center  min-h-screen w-full sm:flex-row sm:justify-center section-about"
+          initial={{ opacity: 0,}}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3}}
+          viewport={{ once: true, amount: 0.3 }} 
+        >
           <div>
-               <h1>hii</h1>
-
+            <h1>hii</h1>
           </div>
           <div>
-            <SVGPerson/>
+            <SVGPerson />
           </div>
-        </section>
+        </motion.section>
       </Suspense>
     </section>
   );

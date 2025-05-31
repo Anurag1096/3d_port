@@ -127,6 +127,12 @@ body:has(.card[data-color="green"]:hover) {
   .dark .light-bulb{
     @apply bg-yellow-700 brightness-50;
   }
+  .section-about{
+    @apply bg-white;
+  }
+  .dark .section-about{
+    @apply bg-black-500;
+  }
 }
 
 .glassmorphism {
