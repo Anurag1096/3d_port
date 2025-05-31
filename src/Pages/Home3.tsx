@@ -2,6 +2,8 @@ import React, { Suspense } from "react";
 import { Loader } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+const SVGPerson = React.lazy(() => import('../compoents/svgPerson'));
+
 function Home3() {
   const history = useNavigate();
   const buttonClick = () => {
@@ -68,7 +70,7 @@ function Home3() {
 
           </div>
           <div>
-            <span>images</span>
+            <SVGPerson/>
           </div>
         </section>
       </Suspense>
