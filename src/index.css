@@ -128,7 +128,7 @@ body:has(.card[data-color="green"]:hover) {
     @apply bg-yellow-700 brightness-50;
   }
   .section-about{
-    @apply bg-white;
+    @apply bg-gray-50;
   }
   .dark .section-about{
     @apply bg-black-500;

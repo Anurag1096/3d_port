@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Loader } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import CTA from "../compoents/CTA";
 const SVGPerson = React.lazy(() => import("../compoents/svgPerson"));
 
 function Home3() {
@@ -11,7 +12,7 @@ function Home3() {
   };
   return (
     //main home
-    <section className=" min-h-screen  overflow-x-hidden w-full   z-0">
+    <section className=" min-h-full  overflow-x-hidden w-full   z-0">
       <Suspense fallback={<Loader />}>
         <section
           id="hero-section"
@@ -68,19 +69,61 @@ function Home3() {
         </section>
         <motion.section
           id="about-section"
-          className="flex flex-col rounded-t-3xl z-10 items-center  min-h-screen w-full sm:flex-row sm:justify-center section-about"
-          initial={{ opacity: 0,}}
+          className="flex flex-col-reverse mt-[-200px] rounded-t-3xl z-10 items-center  min-h-screen w-full sm:flex-row sm:justify-center  section-about"
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3}}
-          viewport={{ once: true, amount: 0.3 }} 
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div>
-            <h1>hii</h1>
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              I help teams build fast, accessible, and modern interfaces that
+              users love — using React, Tailwind, and clean, scalable code.
+              Whether it's a landing page or a complex UI system, I turn designs
+              into performant, pixel-perfect experiences.
+            </p>
           </div>
           <div>
             <SVGPerson />
           </div>
         </motion.section>
+        <motion.section
+          id="projects-section"
+          className="py-20 px-6 bg-[#FFFAFA] dark:bg-[#041824]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
+            Projects
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
+            <div className="bg-white dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition">
+              <h3 className="font-semibold text-lg mb-2">Kanban Board</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                React, Zustand, Tailwind
+              </p>
+            </div>
+            <div className="bg-white dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition">
+              <h3 className="font-semibold text-lg mb-2">3D Portfolio</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Three.js, Framer Motion
+              </p>
+            </div>
+            {/* Add more as needed */}
+          </div>
+          <div className="text-center mt-6">
+            <a
+              href="/project"
+              className="inline-block bg-gray-900 text-white py-2 px-5 rounded-xl hover:bg-gray-700 transition"
+            >
+              View All Projects
+            </a>
+          </div>
+           
+        </motion.section>
+        
       </Suspense>
     </section>
   );
