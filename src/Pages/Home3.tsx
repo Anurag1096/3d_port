@@ -10,6 +10,7 @@ function Home3() {
     history("/contact");
   };
   return (
+    //main home
     <section className=" min-h-screen  overflow-x-hidden w-full   z-0">
       <Suspense fallback={<Loader />}>
         <section
