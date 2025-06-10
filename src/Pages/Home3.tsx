@@ -46,7 +46,7 @@ function Home3() {
 
             <motion.button
               onClick={buttonClick}
-              className="bg-[#F21E49B0] hover:bg-[#F21E49C9] text-white font-semibold py-2 px-6 rounded-3xl shadow-lg transition duration-300"
+              className="bg-[#F21E49B0] hover:bg-[#F21E49C9] text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition duration-300"
               initial={{
                 opacity: 0,
                 y: 10,
@@ -67,26 +67,34 @@ function Home3() {
             </motion.button>
           </div>
         </section>
-        <motion.section
+        <section
           id="about-section"
           className="flex flex-col-reverse mt-[-200px] rounded-t-3xl z-10 items-center  min-h-screen w-full sm:flex-row sm:justify-center  section-about"
-          initial={{ opacity: 0 }}
+        
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
-        >
-          <div>
+          >
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               I help teams build fast, accessible, and modern interfaces that
               users love — using React, Tailwind, and clean, scalable code.
               Whether it's a landing page or a complex UI system, I turn designs
               into performant, pixel-perfect experiences.
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+          
+          >
             <SVGPerson />
-          </div>
-        </motion.section>
+          </motion.div>
+        </section>
         <motion.section
           id="projects-section"
           className="py-20 px-6 bg-[#FFFAFA] dark:bg-[#041824]"
@@ -95,18 +103,25 @@ function Home3() {
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
             Projects
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
-            <div className="bg-white dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition">
-              <h3 className="font-semibold text-lg mb-2">Kanban Board</h3>
+            <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+              <h3 className="font-semibold text-lg mb-1">Kanban Board</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 React, Zustand, Tailwind
               </p>
             </div>
-            <div className="bg-white dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition">
-              <h3 className="font-semibold text-lg mb-2">3D Portfolio</h3>
+            <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+              <h3 className="font-semibold text-lg mb-1">3D Portfolio</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Three.js, Framer Motion
+              </p>
+            </div>
+               <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+                
+              <h3 className="font-semibold text-lg mb-1">3D Portfolio</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Three.js, Framer Motion
               </p>
@@ -116,7 +131,7 @@ function Home3() {
           <div className="text-center mt-6">
             <a
               href="/project"
-              className="inline-block bg-gray-900 text-white py-2 px-5 rounded-xl hover:bg-gray-700 transition"
+              className="inline-block btn  py-2 px-5 rounded-xl hover:scale-[1.03] transition"
             >
               View All Projects
             </a>
