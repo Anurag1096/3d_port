@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { linkedin, twitter, github } from "../assets/icons";
 
@@ -9,9 +10,17 @@ function Contact() {
   // code to handle form data
 
   const iconList = [
-    { iconName: "linkedin", iconLink:"https://www.linkedin.com/in/anurag-chakravarty-832338a6/", iconUrl: linkedin },
-    { iconName: "twitter",iconLink:"", iconUrl: twitter },
-    { iconName: "github",iconLink:"https://github.com/Anurag1096", iconUrl: github },
+    {
+      iconName: "linkedin",
+      iconLink: "https://www.linkedin.com/in/anurag-chakravarty-832338a6/",
+      iconUrl: linkedin,
+    },
+    { iconName: "twitter", iconLink: "", iconUrl: twitter },
+    {
+      iconName: "github",
+      iconLink: "https://github.com/Anurag1096",
+      iconUrl: github,
+    },
   ];
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -40,7 +49,12 @@ function Contact() {
   const handleFocus = () => {};
   const handleBlur = () => {};
   return (
-    <section className="relative flex  flex-col-reverse max-container-2 md:justify-between md:flex-row">
+    <motion.section
+      initial={{ opacity: 0, y: -40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative flex  flex-col-reverse max-container-2 md:justify-between md:flex-row"
+    >
       {/* Contact section */}
       <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
         <h1 className="head-text">Get in touch</h1>
@@ -128,7 +142,7 @@ function Contact() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

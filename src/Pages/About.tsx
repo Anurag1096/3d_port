@@ -1,4 +1,5 @@
 import React from "react";
+import {motion} from 'framer-motion';
 import { skills, experiences } from "../constants";
 import {
   VerticalTimeline,
@@ -10,19 +11,37 @@ import CTA from "../compoents/CTA";
 function About() {
   return (
     <section className=" max-container">
-      <h1 className="head-text">
+      <motion.h1 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+      viewport={{ once: true, amount: 0.3 }}
+      
+      
+      className="head-text">
         Hello I'm{" "}
         <span className="orrange-gradient_text font-semibold  drop-shadow-2xl">
           Anurag
         </span>
-      </h1>
+      </motion.h1>
       <div className="mt-5 flex flex-col gap-3 text-slate-600">
-        <p>
+        <motion.p
+        initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+      viewport={{ once: true, amount: 0.3 }}
+        >
           Software Engineer based in India, specilazing in Frontend devlopment
           through hands on learning and building applications.
-        </p>
+        </motion.p>
       </div>
-      <div className="py-10 flex flex-col">
+      <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+      viewport={{ once: true, amount: 0.3 }}
+      
+      className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
         <div className="mt-16 flex flex-wrap  gap-12">
           {skills.map((item) => {
@@ -44,7 +63,7 @@ function About() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
       <div className="py-16">
         <h3 className="subhead-text">Work Experience</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-600">
