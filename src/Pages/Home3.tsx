@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React, { Suspense,useRef } from "react";
 import { Loader } from "@react-three/drei";
-import { motion } from "framer-motion";
+import { motion,useScroll, useTransform,useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import CTA from "../compoents/CTA";
 const SVGPerson = React.lazy(() => import("../compoents/svgPerson"));
@@ -10,16 +10,30 @@ function Home3() {
   const buttonClick = () => {
     history("/contact");
   };
+
+
+const heroRef = useRef(null);
+const { scrollYProgress: heroScroll } = useScroll({
+  target: heroRef,
+  offset: ["start end", "end start"]
+});
+const heroParallaxY = useTransform(heroScroll, [0, 1], ["-50px", "50px"]);
+const smoothParallaxY = useSpring(heroParallaxY, {
+  stiffness: 80,
+  damping: 20,
+});
   return (
     //main home
     <section className=" min-h-full  overflow-x-hidden w-full   z-0">
       <Suspense fallback={<Loader />}>
         <section
           id="hero-section"
+          ref={heroRef}
           className="flex justify-center  w-full md:min-h-screen bg-inherit"
         >
           {/* need to work on it */}
-          <div
+          <motion.div
+          style={{ y: smoothParallaxY }}
             id="container"
             className="text-center h-[600px] mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
           >
@@ -65,13 +79,17 @@ function Home3() {
             >
               Let’s Connect
             </motion.button>
-          </div>
+          </motion.div>
         </section>
+          <h1 className=" sm:text-4xl font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
+            About
+          </h1>
         <section
           id="about-section"
           className="flex flex-col-reverse mt-[-200px] rounded-t-3xl z-10 items-center  min-h-screen w-full sm:flex-row sm:justify-center  section-about"
         
         >
+        
           <motion.div
             initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,6 +102,14 @@ function Home3() {
               Whether it's a landing page or a complex UI system, I turn designs
               into performant, pixel-perfect experiences.
             </p>
+            <div className="text-start mt-6">
+            <a
+              href="/about"
+              className="inline-block btn  py-2 px-5 rounded-xl hover:scale-[1.03] transition"
+            >
+              Learn more
+            </a>
+          </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0 }}

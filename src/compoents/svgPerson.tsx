@@ -1,4 +1,5 @@
 import * as React from "react";
+import { motion } from "framer-motion";
 
 const SVGPerson = (props) => (
   <svg
@@ -10,7 +11,11 @@ const SVGPerson = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}
   >
-    <rect width={383} height={520} fill="url(#pattern0_149_2)" />
+    <rect
+      width={383}
+      height={520}
+      fill="url(#pattern0_149_2)"
+    />
     <defs>
       <pattern
         id="pattern0_149_2"
