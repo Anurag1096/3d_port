@@ -22,6 +22,22 @@ const smoothParallaxY = useSpring(heroParallaxY, {
   stiffness: 80,
   damping: 20,
 });
+
+//paralax for about section background div
+const aboutBg=useRef(null)
+const {scrollYProgress:aboutScroll}=useScroll({
+  target: aboutBg,
+  offset:['start end', "end start"],
+});
+const aboutParallaxY= useTransform(aboutScroll,[0,1],["-50px","50px"] );
+const smoothAboutParaY=useSpring(aboutParallaxY,{
+    stiffness: 80,
+  damping: 20,
+});
+
+
+
+
   return (
     //main home
     <section className=" min-h-full  overflow-x-hidden w-full   z-0">
@@ -84,7 +100,10 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           <h1 className=" sm:text-4xl font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
             About
           </h1>
-        <section
+
+          {/* About section */}
+        <motion.section
+          ref={aboutBg}
           id="about-section"
           className="flex flex-col-reverse mt-[-200px] rounded-t-3xl z-10 items-center  min-h-screen w-full sm:flex-row sm:justify-center  section-about"
         
@@ -112,6 +131,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           </div>
           </motion.div>
           <motion.div 
+          style={{y:smoothAboutParaY}}
             initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
@@ -120,7 +140,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           >
             <SVGPerson />
           </motion.div>
-        </section>
+        </motion.section>
         <motion.section
           id="projects-section"
           className="py-20 px-6 bg-[#FFFAFA] dark:bg-[#041824]"
