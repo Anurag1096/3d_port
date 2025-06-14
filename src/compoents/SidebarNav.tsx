@@ -3,7 +3,7 @@ import React from "react";
 import bulb from "../assets/images/bulb.png";
 import "./sideBar.css";
 import { Link } from "react-router-dom";
-import Close from "./Close";
+import {Close,CloseWhite} from "./Close";
 type Props = {
   openSidebar: boolean;
   darkMode:boolean;
@@ -42,7 +42,7 @@ const SideBar = (props: Props) => {
           />
         </div>
                <div className="" onClick={handleClick}>
-            <Close/>
+           {darkMode?<Close/> :<CloseWhite/>}
         </div>
         </div>
       

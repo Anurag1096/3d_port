@@ -6,7 +6,6 @@
     top: 0;
     left: 0;
     transition:left 0.3s ease-out;
-    
     padding:10px 20px 20px 20px;
 }
 
@@ -20,7 +19,6 @@
     top:0;
     left:0;
     transition:left 0.3s ease-in;
-
     padding:5px;
 }
 .btn_close{
@@ -38,11 +36,12 @@
     font-size:14px;
     display:flex;
     margin:10px;
+    color:black;
     background-color:#BFD7ED ;
     padding:2px 5px 2px 5px;
     border:0.1px solid #f0f0f0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius:2px;
+    border-radius:4px;
     justify-content:center;
     align-items:center;
   

@@ -97,7 +97,7 @@ const smoothAboutParaY=useSpring(aboutParallaxY,{
             </motion.button>
           </motion.div>
         </section>
-          <h1 className=" sm:text-4xl font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
+          <h1 className="text-5xl relative top-[-80px] sm:text-4xl  sm:top-[-100px] font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
             About
           </h1>
 
@@ -149,7 +149,7 @@ const smoothAboutParaY=useSpring(aboutParallaxY,{
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
+          <h2 className="text-5xl sm:text-4xl font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
             Projects
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
