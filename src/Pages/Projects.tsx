@@ -26,11 +26,11 @@ function Projects() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Explore my portfolio of front-end development projects. From
-          responsive designs to interactive user interfaces, each project
+          Explore my portfolio of front-end and backend  development projects. From
+          responsive designs to interactive user interfaces and api service, each project
           reflects my commitment to crafting visually appealing and seamlessly
           functional web experiences. Dive into the world of code and creativity
-          to see how I bring ideas to life on the front end of the digital
+          to see how I bring ideas to life on the digital
           landscape.
         </motion.p>
       </div>
