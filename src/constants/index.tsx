@@ -202,13 +202,13 @@ export const projects = [
         description: 'Redesigned my personal website with Typescript, Reactjs and Tailwind css.',
         link: 'https://github.com/Anurag1096/3d_port',
     },
-    // {
-    //     iconUrl: threads,
-    //     theme: 'btn-back-green',
-    //     name: 'Full Stack Threads Clone',
-    //     description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    //     link: 'https://github.com/adrianhajdin/threads',
-    // },
+    {
+        iconUrl: threads,
+        theme: 'btn-back-green',
+        name: 'Reddit Client Frontend',
+        description: 'Created a Reddit client in which you can provide a subreddit name and get all the post in it .',
+        link: 'https://github.com/Anurag1096/reddit-client',
+    },
     {
         iconUrl: car,
         theme: 'btn-back-blue',
@@ -216,13 +216,13 @@ export const projects = [
         description: 'Designed and built a web based game using vanila javascript',
         link: 'https://github.com/Anurag1096/Roll-dice-game-javaScript-',
     },
-    // {
-    //     iconUrl: snapgram,
-    //     theme: 'btn-back-pink',
-    //     name: 'Full Stack Instagram Clone',
-    //     description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-    //     link: 'https://github.com/adrianhajdin/social_media_app',
-    // },
+    {
+        iconUrl: snapgram,
+        theme: 'btn-back-pink',
+        name: 'Reddit Client Backend',
+        description: 'Built backend api for the reddit clients frontend app.',
+        link: 'https://github.com/Anurag1096/reddit-backend',
+    },
     {
         iconUrl: estate,
         theme: 'btn-back-black',
@@ -230,11 +230,11 @@ export const projects = [
         description: 'Developed a backend caching api for endpoints using fastApi in python',
         link: 'https://github.com/Anurag1096/cache-server',
     },
-    // {
-    //     iconUrl: summiz,
-    //     theme: 'btn-back-yellow',
-    //     name: 'AI Summarizer Application',
-    //     description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-    //     link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    // }
+    {
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: 'Pomodoro timer app',
+        description: 'Still working.',
+        link: 'https://github.com/Anurag1096/pomodoro-timer',
+    }
 ];
