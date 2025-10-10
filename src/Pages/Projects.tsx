@@ -65,7 +65,7 @@ function Projects() {
                   rel="noopener noreferrer"
                   className="font-semibold text-blue-600"
                 >
-                  Live Link
+                  {project.live?"Live Link":"Github Link"}
                 </Link>
                 <img
                   src={arrow}

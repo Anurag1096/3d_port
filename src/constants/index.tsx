@@ -201,6 +201,7 @@ export const projects = [
         name: 'Portfolio Website',
         description: 'Redesigned my personal website with Typescript, Reactjs and Tailwind css.',
         link: 'https://github.com/Anurag1096/3d_port',
+        live:true,
     },
     {
         iconUrl: threads,
@@ -208,6 +209,7 @@ export const projects = [
         name: 'Reddit Client Frontend',
         description: 'Created a Reddit client in which you can provide a subreddit name and get all the post in it .',
         link: 'https://github.com/Anurag1096/reddit-client',
+        live:false,
     },
     {
         iconUrl: car,
@@ -215,6 +217,7 @@ export const projects = [
         name: 'Roll-dice',
         description: 'Designed and built a web based game using vanila javascript',
         link: 'https://github.com/Anurag1096/Roll-dice-game-javaScript-',
+        live:true,
     },
     {
         iconUrl: snapgram,
@@ -222,6 +225,7 @@ export const projects = [
         name: 'Reddit Client Backend',
         description: 'Built backend api for the reddit clients frontend app.',
         link: 'https://github.com/Anurag1096/reddit-backend',
+        live:false,
     },
     {
         iconUrl: estate,
@@ -229,6 +233,7 @@ export const projects = [
         name: 'Cache server',
         description: 'Developed a backend caching api for endpoints using fastApi in python',
         link: 'https://github.com/Anurag1096/cache-server',
+        live:false,
     },
     {
         iconUrl: summiz,
@@ -236,5 +241,6 @@ export const projects = [
         name: 'Pomodoro timer app',
         description: 'Still working.',
         link: 'https://github.com/Anurag1096/pomodoro-timer',
+        live:true,
     }
 ];
