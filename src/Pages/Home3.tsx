@@ -3,6 +3,7 @@ import { Loader } from "@react-three/drei";
 import { motion,useScroll, useTransform,useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import AboutComp from "../compoents/AboutComp";
+import AboutBentoGrid from "../compoents/AboutBentoGrid";
 
 
 function Home3() {
@@ -89,7 +90,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           <h1 className="text-5xl relative top-[-80px] sm:text-4xl  sm:top-[-100px] font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
             About
           </h1>
-             <AboutComp/>
+             <AboutBentoGrid/>
           
         <motion.section
           id="projects-section"
