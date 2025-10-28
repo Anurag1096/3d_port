@@ -10,18 +10,17 @@ const AboutBentoGrid = () => {
       {/* About section */}
       <motion.section
         id="about-section"
-        className="grid mx-10 sm:grid-rows-3 gap-2 max-w-4xl sm:mx-auto place-items-center"
+        className="grid mx-10 sm:grid-rows-3 gap-4 max-w-4xl sm:mx-auto place-items-center"
       >
-        <motion.div className=" sm:row-span-2 w-full h-full rounded-lg  bg-white dark:bg-[#222] shadow-lg">
-          <span>01</span>
+        <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[250px] sm:row-span-2 w-full h-full rounded-xl  bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
+          <SVGPerson className="w-full h-auto"/>
+          
         </motion.div>
-        <motion.div className="sm:row-span-2 w-full h-full rounded-lg text-center bg-white dark:bg-[#222] shadow-lg">
-          <span>02</span>
-        </motion.div>
-        <motion.div className="sm:col-span-2 w-full h-full rounded-lg text-center bg-white dark:bg-[#222] shadow-lg">
+      
+        <motion.div className="sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
           <span>03 image if</span>
         </motion.div>
-        <motion.div className="sm:col-span-2 w-full h-full rounded-lg text-center bg-white dark:bg-[#222]   shadow-lg">
+        <motion.div className="sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg">
           <span>04</span>
         </motion.div>
         <motion.div className="sm:col-span-4 w-full h-full p-4 rounded-xl overflow-hidden bg-white dark:bg-[#222]  shadow-lg">

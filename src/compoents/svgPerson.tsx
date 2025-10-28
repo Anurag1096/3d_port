@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 
 const SVGPerson = (props) => (
   <svg
-    width={283}
-    height={320}
-    viewBox="0 0 383 520"
+    width="100%"
+    height="100%"
+    viewBox="0 0 420 520"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}
   >
     <rect
-      width={383}
+      width={420}
       height={520}
       fill="url(#pattern0_149_2)"
     />
