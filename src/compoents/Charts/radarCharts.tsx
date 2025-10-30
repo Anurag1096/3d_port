@@ -1,4 +1,4 @@
-import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
+import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, } from 'recharts';
 
 const data = [
   { subject: 'Math', A: 120, B: 110, fullMark: 150 },
