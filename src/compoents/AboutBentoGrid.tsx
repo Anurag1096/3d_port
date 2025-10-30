@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { motion } from "framer-motion";
 import CustomRadarChart from "./Charts/radarCharts";
+import GitHubHeatMap from "./GithubHeatMap";
 
 const SVGPerson = lazy(() => import("../compoents/svgPerson"));
 
@@ -22,12 +23,10 @@ const AboutBentoGrid = () => {
         <motion.div className="sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
           <span>03 image if</span>
         </motion.div>
-        <motion.div className="sm:col-span-2 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg">
-          <span>04</span>
+        <motion.div className="sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg">
+        <GitHubHeatMap/>
         </motion.div>
-        <motion.div className="sm:col-span-2 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
-          <span>055 image if</span>
-        </motion.div>
+      
         <motion.div className="sm:col-span-4 w-full h-full p-4 rounded-xl overflow-hidden bg-white dark:bg-[#222]  shadow-lg">
           <p className="text-lg text-center p-6 sm:p-1 sm:text-xl md:text-start md:max-w-3xl m-auto  text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
             I help teams build fast, accessible, and modern interfaces that
