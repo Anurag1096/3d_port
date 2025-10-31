@@ -23,7 +23,7 @@ const AboutBentoGrid = () => {
         <motion.div className="sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
           <span>03 image if</span>
         </motion.div>
-        <motion.div className="sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg">
+        <motion.div className="sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg sm:px-8 sm:pt-12" >
         <GitHubHeatMap/>
         </motion.div>
       
