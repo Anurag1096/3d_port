@@ -80,6 +80,12 @@ body:has(.card[data-color="green"]:hover) {
   .subhead-text {
     @apply font-semibold sm:text-3xl text-xl relative font-poppins text-black;
   }
+  .subheadSmall-text {
+    @apply font-semibold sm:text-lg text-lg relative font-poppins text-black;
+  }
+   .dark .subheadSmall-text {
+    @apply font-semibold sm:text-lg text-lg relative font-poppins  text-[#FFFAFA];
+  }
   .dark .subhead-text {
     @apply font-semibold sm:text-3xl text-xl relative font-poppins text-[#FFFAFA];
   }

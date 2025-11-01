@@ -26,7 +26,28 @@ import {
     typescript,
     designer,
 } from "../assets/icons";
-
+export const skillsSmall=[
+     {
+        imageUrl: javascript,
+        name: "JavaScript",
+        type: "Frontend",
+    },
+      {
+        imageUrl: typescript,
+        name: "TypeScript",
+        type: "Frontend",
+    },
+      {
+        imageUrl: react,
+        name: "React",
+        type: "Frontend",
+    },
+    {
+        imageUrl: git,
+        name: "Git",
+        type: "Version Control",
+    },
+]
 export const skills = [
     {
         imageUrl: css,
@@ -109,6 +130,7 @@ export const skills = [
         type: "Frontend",
     }
 ];
+
 
 export const experiences = [
     {

@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { motion } from "framer-motion";
 import CustomRadarChart from "./Charts/radarCharts";
 import GitHubHeatMap from "./GithubHeatMap";
+import { skillsSmall } from "../constants";
 
 const SVGPerson = lazy(() => import("../compoents/svgPerson"));
 
@@ -16,14 +17,36 @@ const AboutBentoGrid = () => {
         <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[250px] sm:row-span-2 w-full h-full rounded-xl  bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
           <SVGPerson className="w-full h-full object-contain" />
         </motion.div>
-        <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[250px] sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
+      
+        <motion.div className="pb-4 sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
+               <h6 className="subhead-text">My Skills</h6>
+                 <div className="mt-10 gap-4 sm:mt-16 flex flex-wrap  sm:gap-8 items-center justify-center">
+                   {skillsSmall.map((item) => {
+                     return (
+                       <div className="block-container w-16 h-16">
+                         <div className="btn-back rounded-xl" />
+                         <div
+                           className="btn-front  rounded-xl flex justify-center
+                         item-center
+                         "
+                         >
+                           <img
+                             className="w-1/2 h-1/2 object-contain"
+                             src={item.imageUrl}
+                             alt={item.name}
+                           />
+                         </div>
+                       </div>
+                     );
+                   })}
+                 </div>
+        </motion.div>
+          <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[250px] sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
           
           <CustomRadarChart  />
         </motion.div>
-        <motion.div className="sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
-          <span>03 image if</span>
-        </motion.div>
         <motion.div className="sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg sm:px-8 sm:pt-12" >
+        {/* //The calling is very slow , need to add abort controler when page is changed and need to fix calling speed*/}
         <GitHubHeatMap/>
         </motion.div>
       
