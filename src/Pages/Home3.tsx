@@ -41,7 +41,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           <motion.div
           style={{ y: smoothParallaxY }}
             id="container"
-            className="text-center h-[600px] mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
+            className="text-center h-[700px] mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
           >
             <motion.h1
               className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4"
@@ -55,13 +55,15 @@ const smoothParallaxY = useSpring(heroParallaxY, {
             </motion.h1>
 
             <motion.h2
-              className="text-lg sm:text-xl md:max-w-xl m-auto  text-gray-600 dark:text-gray-300 mb-6"
+              className="text-lg sm:text-xl md:max-w-4xl m-auto  text-gray-600 dark:text-gray-300 mb-6"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             >
-              I’m a front-end engineer who builds performant interfaces with
-              clean code, modern tools, and a strong focus on user experience
+              I’m a front-end engineer who builds performant, accessible interfaces using clean, maintainable code. 
+              I leverage modern frameworks and tools to craft 
+              seamless digital experiences with a strong focus on usability, responsiveness, and visual clarity. 
+              Passionate about delivering products that not only look great but feel fast and intuitive for every user.
             </motion.h2>
 
             <motion.button
