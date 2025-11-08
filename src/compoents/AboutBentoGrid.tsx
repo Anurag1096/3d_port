@@ -13,7 +13,7 @@ const AboutBentoGrid = () => {
       {/* About section */}
       <motion.section
         id="about-section"
-        className="grid mx-10 sm:grid-rows-3 gap-4 max-w-4xl sm:mx-auto place-items-center"
+        className="grid mx-10 sm:grid-rows-3 gap-4 max-w-4xl sm:mx-auto place-items-center "
       >
         <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[250px] sm:row-span-2 w-full h-full rounded-xl  bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
           <SVGPerson className="w-full h-full object-contain" />
