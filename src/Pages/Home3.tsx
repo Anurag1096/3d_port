@@ -35,7 +35,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
         <section
           id="hero-section"
           ref={heroRef}
-          className="flex justify-center  w-full md:min-h-screen bg-inherit"
+          className="flex justify-center items-center w-full md:min-h-screen bg-[radial-gradient(circle_at_center,_#ffe6f0_40%,_#FFFAFA_100%)] bg-fixed  rounded-full"
         >
           {/* need to work on it */}
           <motion.div

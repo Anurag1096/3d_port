@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import CustomRadarChart from "./Charts/radarCharts";
 import GitHubHeatMap from "./GithubHeatMap";
 import { skillsSmall } from "../constants";
-import HackerRankBadge, { HackerRankBadge2 } from "./HackerRankBadge";
+import { HackerRankBadge2 } from "./HackerRankBadge";
 
 const SVGPerson = lazy(() => import("../compoents/svgPerson"));
 
@@ -46,28 +46,27 @@ const AboutBentoGrid = () => {
           <CustomRadarChart />
         </motion.div>
         <motion.div className=" pb-4 mt-2 sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
-           <h6 className="subhead-text">HackerRank Badges</h6>
-           <div className="mt-10 gap-4 sm:mt-10 flex flex-wrap  sm:gap-8 items-center justify-center">
-
-          <HackerRankBadge2
-            username="anurag_011996"
-            badgeUrl=" https://hrcdn.net/fcore/assets/badges/problem-solving-ecaf59a612.svg"
-            badgeName="Problem Solving"
-            stars={[0,1,2,3]}
+          <h6 className="subhead-text">HackerRank Badges</h6>
+          <div className="mt-10 gap-4 sm:mt-10 flex flex-wrap  sm:gap-8 items-center justify-center">
+            <HackerRankBadge2
+              username="anurag_011996"
+              badgeUrl=" https://hrcdn.net/fcore/assets/badges/problem-solving-ecaf59a612.svg"
+              badgeName="Problem Solving"
+              stars={[0, 1, 2, 3]}
             />
-           <HackerRankBadge2
-            username="anurag_011996"
-            badgeUrl=" https://hrcdn.net/fcore/assets/badges/python-f70befd824.svg"
-            badgeName="Python"
-            stars={[0,1,2]}
+            <HackerRankBadge2
+              username="anurag_011996"
+              badgeUrl=" https://hrcdn.net/fcore/assets/badges/python-f70befd824.svg"
+              badgeName="Python"
+              stars={[0, 1, 2]}
             />
-           <HackerRankBadge2
-            username="anurag_011996"
-            badgeUrl=" https://hrcdn.net/fcore/assets/badges/sql-89e76e7082.svg"
-            badgeName="SQL"
-            stars={[0,1,2]}
+            <HackerRankBadge2
+              username="anurag_011996"
+              badgeUrl=" https://hrcdn.net/fcore/assets/badges/sql-89e76e7082.svg"
+              badgeName="SQL"
+              stars={[0, 1, 2]}
             />
-            </div>
+          </div>
         </motion.div>
         <motion.div className="pb-3 sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222]   shadow-lg sm:px-8 sm:pt-12">
           {/* //The calling is very slow , need to add abort controler when page is changed and need to fix calling speed*/}
