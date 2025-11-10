@@ -2,7 +2,9 @@ import React, { Suspense,useRef } from "react";
 import { Loader } from "@react-three/drei";
 import { motion,useScroll, useTransform,useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import AboutComp from "../compoents/AboutComp";
+
+
+
 import AboutBentoGrid from "../compoents/AboutBentoGrid";
 
 
@@ -35,7 +37,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
         <section
           id="hero-section"
           ref={heroRef}
-           className="flex justify-center items-center w-full md:min-h-screen bg-[radial-gradient(circle_at_center,_#ffe6f0_40%,_#FFFAFA_100%)] bg-fixed rounded dark:bg-[radial-gradient(circle_at_center,_#4a044e_0%,_#041824_100%)]"
+           className="flex justify-center items-center w-full md:min-h-screen bg-[radial-gradient(circle_at_center,_#ffe6f0_40%,_#FFFAFA_80%)]  rounded dark:bg-[radial-gradient(circle_at_center,_#4a044e_0%,_#041824_80%)]"
         >
           {/* need to work on it */}
           <motion.div
@@ -107,19 +109,22 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
             <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+              <img src="/kanban_pic.jpg" alt="pomodoro image" width={512} height={512}/>
               <h3 className="font-semibold text-lg mb-1">Kanban Board</h3>
+
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 React, Zustand, Tailwind
               </p>
             </div>
             <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+              <img src="/kanban_pic.jpg" alt="pomodoro image" width={512} height={512}/>
               <h3 className="font-semibold text-lg mb-1">3D Portfolio</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Three.js, Framer Motion
               </p>
             </div>
                <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-                
+                <img src="/kanban_pic.jpg" alt="pomodoro image" width={512} height={512}/>
               <h3 className="font-semibold text-lg mb-1">3D Portfolio</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Three.js, Framer Motion
