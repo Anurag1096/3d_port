@@ -109,7 +109,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
             <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-              <img src="/kanban_pic.jpg" alt="pomodoro image" width={512} height={512}/>
+              <img src="/kkanban.png" alt="pomodoro image" width={512} height={512}/>
               <h3 className="font-semibold text-lg mb-1">Kanban Board</h3>
 
               <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -117,15 +117,15 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               </p>
             </div>
             <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-              <img src="/kanban_pic.jpg" alt="pomodoro image" width={512} height={512}/>
-              <h3 className="font-semibold text-lg mb-1">3D Portfolio</h3>
+              <img src="/reddit.png" alt="pomodoro image" width={512} height={512}/>
+              <h3 className="font-semibold text-lg mb-1">Reddit Client</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Three.js, Framer Motion
               </p>
             </div>
                <div className="bg-white cursor-pointer dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-                <img src="/kanban_pic.jpg" alt="pomodoro image" width={512} height={512}/>
-              <h3 className="font-semibold text-lg mb-1">3D Portfolio</h3>
+                <img src="/pomodoro.png" alt="pomodoro image" width={512} height={512}/>
+              <h3 className="font-semibold text-lg mb-1">Pomodoro Timer</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Three.js, Framer Motion
               </p>
