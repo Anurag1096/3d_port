@@ -35,7 +35,8 @@ export default function GitHubHeatMap() {
 
       const repos: GitHubRepo[] = await repoRes.json();
       const commits: { date: string }[] = [];
-
+       console.table(repos)
+      //  this is also fast.
       for (const repo of repos) {
         const res = await fetch(
           `https://api.github.com/repos/${username}/${repo.name}/commits?per_page=100`,
@@ -46,29 +47,33 @@ export default function GitHubHeatMap() {
             },
           }
         );
-
+        
+         
+         
         if (!res.ok) continue;
         const data: GitHubCommit[] = await res.json();
-
+         
         data.forEach((c) => {
           const date = c.commit?.author?.date;
           if (date) commits.push({ date });
         });
+        ////////add below this line
+        console.log(data)
+        // Count commits per day
+        const map: Record<string, number> = {};
+        commits.forEach((c) => {
+          const d = c.date.split("T")[0];
+          map[d] = (map[d] || 0) + 1;
+        });
+        
+        const result = Object.entries(map).map(([date, count]) => ({
+          date,
+          count,
+        }));
+        
+        setHeatmapData(result);
       }
-
-      // Count commits per day
-      const map: Record<string, number> = {};
-      commits.forEach((c) => {
-        const d = c.date.split("T")[0];
-        map[d] = (map[d] || 0) + 1;
-      });
-
-      const result = Object.entries(map).map(([date, count]) => ({
-        date,
-        count,
-      }));
-
-      setHeatmapData(result);
+      //////by this for every commit array record the heatmap gets updated
     } catch (err) {
       console.error("Error fetching data:", err);
     } finally {
