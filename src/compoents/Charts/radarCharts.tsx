@@ -1,12 +1,16 @@
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, } from 'recharts';
 
 const data = [
-  { subject: 'Math', A: 120, B: 110, fullMark: 150 },
-  { subject: 'Science', A: 98, B: 130, fullMark: 150 },
-  { subject: 'English', A: 86, B: 130, fullMark: 150 },
-  { subject: 'History', A: 99, B: 100, fullMark: 150 },
-  { subject: 'Geography', A: 85, B: 90, fullMark: 150 },
-  { subject: 'Art', A: 65, B: 85, fullMark: 150 },
+  { language: 'JavaScript', A: 70, Range: 100 },
+  { language: 'React', A: 70, Range: 100 },
+  { language: 'TypeScript', A: 60, Range: 100 },
+  { language: 'CSS3', A: 73, Range: 100 },
+  { language: 'HTML5', A: 70, Range: 100 },
+  { language: 'Redux', A: 65, Range: 100 },
+    { language: 'Testing (Jest / RTL)', A: 60, Range: 100 },
+  { language: 'Performance', A: 55, Range: 100 },
+  { language: 'Accessibility', A: 50, Range: 100 },
+  { language: 'Browser APIs', A: 55, Range: 100 },
 ];
 
 const CustomRadarChart = () => (
@@ -19,7 +23,7 @@ const CustomRadarChart = () => (
     data={data}
   >
     <PolarGrid />
-    <PolarAngleAxis dataKey="subject" />
+    <PolarAngleAxis dataKey="language" />
     <PolarRadiusAxis />
     <Radar
       name="Student A"
