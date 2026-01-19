@@ -25,6 +25,7 @@ import {
     threads,
     typescript,
     designer,
+    kanban,
 } from "../assets/icons";
 export const skillsSmall=[
      {
@@ -226,6 +227,14 @@ export const projects = [
         live:true,
     },
     {
+        iconUrl:kanban,
+        theme:'ben-back-red',
+        name:'Kanban board',
+        description:"Kanban board frontend app with state management and testing",
+        link:'https://github.com/Anurag1096/knaban-board',
+        live:false,
+    },
+    {
         iconUrl: threads,
         theme: 'btn-back-green',
         name: 'Reddit Client Frontend',
@@ -239,7 +248,7 @@ export const projects = [
         name: 'Roll-dice',
         description: 'Designed and built a web based game using vanila javascript',
         link: 'https://github.com/Anurag1096/Roll-dice-game-javaScript-',
-        live:true,
+        live:false,
     },
     {
         iconUrl: snapgram,
@@ -263,6 +272,6 @@ export const projects = [
         name: 'Pomodoro timer app',
         description: 'Still working.',
         link: 'https://github.com/Anurag1096/pomodoro-timer',
-        live:true,
+        live:false,
     }
 ];

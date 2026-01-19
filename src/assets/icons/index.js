@@ -14,6 +14,7 @@ import redux from './redux.svg'
 import sass from './sass.svg'
 import tailwindcss from './tailwindcss.svg'
 import typescript from './typescript.svg'
+import kanban from './kanban.svg'
 import linkedin from './linkedin.svg'
 import twitter from './twitter.svg'
 import car from './car.svg'
@@ -38,6 +39,7 @@ export {
     mongodb,
     motion,
     mui,
+    kanban,
     nextjs,
     nodejs,
     react,
