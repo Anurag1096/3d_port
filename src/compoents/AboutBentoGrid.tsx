@@ -24,7 +24,7 @@ const AboutBentoGrid = () => {
           <div className="mt-10 gap-4 sm:mt-16 flex flex-wrap  sm:gap-8 items-center justify-center">
             {skillsSmall.map((item) => {
               return (
-                <div className="block-container w-16 h-16">
+                <div key={item.name} className="block-container w-16 h-16">
                   <div className="btn-back rounded-xl" />
                   <div
                     className="btn-front  rounded-xl flex justify-center

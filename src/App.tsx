@@ -19,7 +19,7 @@ function App() {
     if (userPref === null) {
       localStorage.setItem("darkVal", JSON.stringify(darkMode));
     } else {
-      console.log("Darkval",userPref)
+     
       setDarkMode(JSON.parse(userPref)); // convert string back to boolean
     }
   }, []);

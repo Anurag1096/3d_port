@@ -18,7 +18,7 @@ function Home3() {
 const heroRef = useRef(null);
 const { scrollYProgress: heroScroll } = useScroll({
   target: heroRef,
-  offset: ["start end", "end start"]
+  offset: ["start end", "end start"],
 });
 const heroParallaxY = useTransform(heroScroll, [0, 1], ["-50px", "50px"]);
 const smoothParallaxY = useSpring(heroParallaxY, {

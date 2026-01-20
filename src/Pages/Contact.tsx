@@ -123,7 +123,7 @@ function Contact() {
 
         <div className="flex ">
           {iconList.map((item) => (
-            <div className="block-container cursor-pointer w-14 h-14 m-4  md:w-32 md:h-32 md:m-8">
+            <div key={item.iconName} className="block-container cursor-pointer w-14 h-14 m-4  md:w-32 md:h-32 md:m-8">
               <div className="btn-back rounded-xl " />
               <a
                 href={item.iconLink}
