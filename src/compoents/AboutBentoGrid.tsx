@@ -42,7 +42,7 @@ const AboutBentoGrid = () => {
             })}
           </div>
         </motion.div>
-        <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[250px] sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
+        <motion.div className=" xs:row-span-2 xs:w-full xs:min-h-[300px] sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
           <CustomRadarChart />
         </motion.div>
         <motion.div className=" pb-4 mt-2 sm:col-span-4 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">

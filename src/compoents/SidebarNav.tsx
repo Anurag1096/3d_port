@@ -29,7 +29,7 @@ const SideBar = (props: Props) => {
     <>
      {/* the sidebar design need fixing */}
       <div
-        className={openSidebar ? `main_wrapper2 bg-[#041824] dark:bg-[#FFFAFA]` : "main_wrapper bg-[#041824A6] dark:bg-[#FFFAFA]"}
+        className={openSidebar ? `main_wrapper2 bg-[#093048] ` : "main_wrapper bg-[#0e344da6] "}
         aria-label="Sidebar"
       >
         <div className="flex justify-between">
@@ -42,7 +42,7 @@ const SideBar = (props: Props) => {
           />
         </div>
                <div className="" onClick={handleClick}>
-           {darkMode?<Close/> :<CloseWhite/>}
+           <CloseWhite/>
         </div>
         </div>
       

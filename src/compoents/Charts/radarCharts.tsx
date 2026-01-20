@@ -7,7 +7,7 @@ const data = [
   { language: 'CSS3', A: 73, Range: 100 },
   { language: 'HTML5', A: 70, Range: 100 },
   { language: 'Redux', A: 65, Range: 100 },
-    { language: 'Testing (Jest / RTL)', A: 60, Range: 100 },
+    { language: 'Testing (Vitest / RTL)', A: 60, Range: 100 },
   { language: 'Performance', A: 55, Range: 100 },
   { language: 'Accessibility', A: 50, Range: 100 },
   { language: 'Browser APIs', A: 55, Range: 100 },

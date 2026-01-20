@@ -35,7 +35,7 @@ export default function GitHubHeatMap() {
 
       const repos: GitHubRepo[] = await repoRes.json();
       const commits: { date: string }[] = [];
-       console.table(repos)
+      
       //  this is also fast.
       for (const repo of repos) {
         const res = await fetch(
@@ -57,8 +57,7 @@ export default function GitHubHeatMap() {
           const date = c.commit?.author?.date;
           if (date) commits.push({ date });
         });
-        ////////add below this line
-        console.log(data)
+     
         // Count commits per day
         const map: Record<string, number> = {};
         commits.forEach((c) => {
