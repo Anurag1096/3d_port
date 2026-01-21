@@ -43,10 +43,10 @@ const smoothParallaxY = useSpring(heroParallaxY, {
           <motion.div
           style={{ y: smoothParallaxY }}
             id="container"
-            className="text-center h-[700px] mt-20 sm:mt-40  lg:max-w-3xl lg:px-4"
+            className="text-center px-2 h-[700px] mt-20 sm:mt-60  lg:max-w-3xl lg:h-[768px]  lg:px-4 xl:h-[768px]"
           >
             <motion.h1
-              className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+              className="text-4xl sm:text-5xl  font-bold text-gray-900 dark:text-white mb-4"
               initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -91,7 +91,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
             </motion.button>
           </motion.div>
         </section>
-          <h1 className="text-5xl relative top-[-80px] sm:text-4xl  sm:top-[-100px] font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
+          <h1 className="text-5xl relative top-[-50px] sm:text-6xl  sm:top-[-70px] font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
             About
           </h1>
              <AboutBentoGrid/>
