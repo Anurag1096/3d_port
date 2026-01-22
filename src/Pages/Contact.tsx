@@ -2,11 +2,18 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { linkedin, twitter, github } from "../assets/icons";
+const serviceKey = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateKey = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKkey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 function Contact() {
-  // const formRef = useRef();
-  // const [form, setForm] = useState({ name: "", email: "", message: "" });
-  // const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [form, setForm] = useState({
+    form_name: "",
+    form_email: "",
+    message: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
   // code to handle form data
 
   const iconList = [
@@ -15,7 +22,11 @@ function Contact() {
       iconLink: "https://www.linkedin.com/in/anurag-chakravarty-832338a6/",
       iconUrl: linkedin,
     },
-    { iconName: "twitter", iconLink: "https://x.com/anuragonexzero?s=21", iconUrl: twitter },
+    {
+      iconName: "twitter",
+      iconLink: "https://x.com/anuragonexzero?s=21",
+      iconUrl: twitter,
+    },
     {
       iconName: "github",
       iconLink: "https://github.com/Anurag1096",
@@ -29,20 +40,28 @@ function Contact() {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setIsLoading(true);
+    if (!serviceKey || !templateKey || !publicKkey) {
+      console.error("EmailJS environment variables are missing");
+      setIsLoading(false);
+      return;
+    }
 
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formRef.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
+      .sendForm(serviceKey, templateKey, formRef.current, {
+        publicKey: publicKkey,
       })
       .then(
         () => {
           console.log("SUCCESS!");
           setIsLoading(false);
+
+          setForm({ form_name: "", form_email: "", message: "" });
+          alert("Message sent successfully 🚀");
         },
         (error) => {
           console.log("FAILED...", error.text);
           setIsLoading(false);
-        }
+        },
       );
   };
 
@@ -56,7 +75,7 @@ function Contact() {
       className="relative flex  flex-col-reverse max-container-2 md:justify-between md:flex-row"
     >
       {/* Contact section */}
-      {/* <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
+      <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
         <h1 className="head-text">Get in touch</h1>
 
         <form
@@ -68,11 +87,11 @@ function Contact() {
             <div>Name</div>
             <input
               type="text"
-              name="name"
+              name="form_name"
               className="input"
               placeholder="John"
               required
-              value={form.name}
+              value={form.form_name}
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
@@ -82,11 +101,11 @@ function Contact() {
             <div>Email</div>
             <input
               type="email"
-              name="email"
+              name="form_email"
               className="input"
               placeholder="John@abc.com"
               required
-              value={form.email}
+              value={form.form_email}
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
@@ -116,14 +135,17 @@ function Contact() {
             {isLoading ? "Sending..." : "Send message"}
           </button>
         </form>
-      </div> */}
+      </div>
       <div className="flex flex-col-reverse  m-auto md:flex-row  ">
-        {/* <div className="bg-black dark:bg-[#FFFAFA] h-px w-inherit my-10 md:hidden "></div>
-        <div className="hidden md:inline-block md:bg-black md:dark:bg-[#FFFAFA]  md:h-48 md:w-px md:mx-10 "></div> */}
+        <div className="bg-black dark:bg-[#FFFAFA] h-px w-inherit my-10 md:hidden "></div>
+        <div className="hidden md:inline-block md:bg-black md:dark:bg-[#FFFAFA]  md:h-48 md:w-px md:mx-10 "></div>
 
         <div className="flex ">
           {iconList.map((item) => (
-            <div key={item.iconName} className="block-container cursor-pointer w-14 h-14 m-4  md:w-32 md:h-32 md:m-8">
+            <div
+              key={item.iconName}
+              className="block-container cursor-pointer w-14 h-14 m-4  md:w-32 md:h-32 md:m-8"
+            >
               <div className="btn-back rounded-xl " />
               <a
                 href={item.iconLink}
