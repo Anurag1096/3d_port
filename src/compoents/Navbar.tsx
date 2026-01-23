@@ -51,6 +51,14 @@ function Navbar({darkMode, setMode}:Props) {
         >
           Contact
         </NavLink>
+        <a
+          href="/Anurag_cv.pdf"
+          download
+          title="Download CV (PDF)"
+          className="px-2 rounded-lg bg-transparent text-white hover:opacity-80"
+        >
+          <img src="cv.png" alt="cv" width={24} height={24}/>
+        </a>
         <div onClick={handleMode} className="btn-front rounded-xl flex justify-center  items-center cursor-pointer  light-bulb p-2  ">
           <img
             src={bulb}
