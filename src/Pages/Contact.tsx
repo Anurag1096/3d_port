@@ -10,7 +10,7 @@ function Contact() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState({
     form_name: "",
-    form_email: "",
+    reply_to: "",
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -55,7 +55,7 @@ function Contact() {
           console.log("SUCCESS!");
           setIsLoading(false);
 
-          setForm({ form_name: "", form_email: "", message: "" });
+          setForm({ form_name: "", reply_to: "", message: "" });
           alert("Message sent successfully 🚀");
         },
         (error) => {
@@ -101,11 +101,11 @@ function Contact() {
             <div>Email</div>
             <input
               type="email"
-              name="form_email"
+              name="reply_to"
               className="input"
               placeholder="John@abc.com"
               required
-              value={form.form_email}
+              value={form.reply_to}
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
