@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import bulb from "../assets/images/bulb.png";
+import { useTranslation } from "react-i18next";
 type Props={
   darkMode:boolean;
   setMode:(a:boolean)=> void;
 }
 function Navbar({darkMode, setMode}:Props) {
-
+const {t}=useTranslation()
  const handleMode=()=>{
   setMode(!darkMode)
    localStorage.setItem('darkVal', JSON.stringify(!darkMode));
@@ -31,7 +32,8 @@ function Navbar({darkMode, setMode}:Props) {
 
           }
         >
-          About
+          
+          {t("nav.about")}
         </NavLink>
         <NavLink
           to="/project"
@@ -40,7 +42,7 @@ function Navbar({darkMode, setMode}:Props) {
 
           }
         >
-          Project
+          {t("nav.project")}
         </NavLink>
         <NavLink
           to="/contact"
@@ -49,7 +51,7 @@ function Navbar({darkMode, setMode}:Props) {
 
           }
         >
-          Contact
+        {t('nav.contact')}
         </NavLink>
         <a
           href="/Anurag_cv.pdf"

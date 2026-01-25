@@ -3,12 +3,14 @@ import { Loader } from "@react-three/drei";
 import { motion,useScroll, useTransform,useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-
-
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 import AboutBentoGrid from "../compoents/AboutBentoGrid";
 
 
 function Home3() {
+  const {t}=useTranslation()
+  
   const history = useNavigate();
   const buttonClick = () => {
     history("/contact");
@@ -51,9 +53,9 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Crafting Fast,{" "}
-              <span className="text-[#2589FABD]"> Responsive</span>, and
-              Accessible Web Experiences
+              {t("hero.heading1")},{" "}
+              <span className="text-[#2589FABD]"> {t("hero.heading2")}</span>, {t("hero.and")}
+              {" "} {t("hero.heading3")}
             </motion.h1>
 
             <motion.h2
@@ -62,10 +64,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             >
-              I’m a front-end engineer who builds performant, accessible interfaces using clean, maintainable code. 
-              I leverage modern frameworks and tools to craft 
-              seamless digital experiences with a strong focus on usability, responsiveness, and visual clarity. 
-              Passionate about delivering products that not only look great but feel fast and intuitive for every user.
+             {t("hero.subHeading")}
             </motion.h2>
 
             <motion.button
@@ -87,7 +86,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             >
-              Let’s Connect
+              {t("connect")}
             </motion.button>
           </motion.div>
         </section>
@@ -138,7 +137,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               href="/project"
               className="inline-block btn  py-2 px-5 rounded-xl hover:scale-[1.03] transition"
             >
-              View All Projects
+              {t("viewAllProject")}
             </a>
           </div>
            

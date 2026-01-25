@@ -10,6 +10,7 @@ import Navbar from "./compoents/Navbar";
 import SideBar from "./compoents/SidebarNav";
 import { About, Projects, Contact, Home3 } from "./Pages";
 import Hamburg from "./compoents/HamBurger";
+import Footer from "./compoents/Footer/Footer";
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const [openSidebar, setCloseSidebar] = useState<boolean>(false);
@@ -43,7 +44,7 @@ function App() {
 
   // -----------------------------------------
 
-  return (
+  return (<>
     <main className=" min-h-screen transition-colors duration-1000 ">
       <Router>
         <div className="inline w-screen  flex justify-between items-center p-5 md:hidden">
@@ -77,6 +78,10 @@ function App() {
         </Routes>
       </Router>
     </main>
+    
+<Footer/>
+    
+    </>
   );
 }
 

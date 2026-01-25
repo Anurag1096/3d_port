@@ -4,10 +4,12 @@ import CustomRadarChart from "./Charts/radarCharts";
 import GitHubHeatMap from "./GithubHeatMap";
 import { skillsSmall } from "../constants";
 import { HackerRankBadge2 } from "./HackerRankBadge";
-
+import { useTranslation } from "react-i18next";
 const SVGPerson = lazy(() => import("../compoents/svgPerson"));
 
 const AboutBentoGrid = () => {
+
+  const {t}=useTranslation()
   return (
     <>
       {/* About section */}
@@ -76,10 +78,7 @@ const AboutBentoGrid = () => {
 
         <motion.div className="xs:p-1 sm:col-span-4 w-full h-full py-4 rounded-xl overflow-hidden bg-white dark:bg-[#222]  shadow-lg">
           <p className="text-lg text-center p-6 sm:p-1 sm:text-xl md:text-start md:max-w-3xl m-auto  text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
-            I help teams build fast, accessible, and modern interfaces that
-            users love — using React, Tailwind, and clean, scalable code.
-            Whether it's a landing page or a complex UI system, I turn designs
-            into performant, pixel-perfect experiences.
+           {t("about.aboutText")}
           </p>
           <div className="text-center mt-6 mx-6 md:mx-1">
             <a

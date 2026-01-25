@@ -4,6 +4,7 @@ import bulb from "../assets/images/bulb.png";
 import "./sideBar.css";
 import { Link } from "react-router-dom";
 import {Close,CloseWhite} from "./Close";
+import { useTranslation } from "react-i18next";
 type Props = {
   openSidebar: boolean;
   darkMode:boolean;
@@ -14,7 +15,7 @@ type Props = {
 //will take 4 props one for darkmode and setMode and other for sidebar open/close function.
 const SideBar = (props: Props) => {
   const { openSidebar, setCloseSidebar,darkMode,setMode } = props;
-
+ const {t} =useTranslation()
   const handleClick = () => {
     setCloseSidebar(!openSidebar);
   };
@@ -49,17 +50,17 @@ const SideBar = (props: Props) => {
         <ul className="list_container">
           <li className="list_item">
             <Link style={{ textDecoration: "none" }} to="/about">
-              About
+              {t("nav.about")}
             </Link>
           </li>
           <li className="list_item">
             <Link style={{ textDecoration: "none" }} to="/project">
-              Projects
+              {t("nav.project")}
             </Link>
           </li>
           <li className="list_item">
             <Link style={{ textDecoration: "none" }} to="/contact">
-              Contact
+             {t("nav.contact")}
             </Link>
           </li>
           <li className="list_item">

@@ -1,0 +1,24 @@
+{
+    "nav": {
+        "about": "About",
+        "project": "Project",
+        "contact": "Contact"
+        
+    },
+    "hero": {
+        "heading1": "Crafting Fast",
+        "heading2": " Responsive",
+        "and": "and",
+        "heading3": "Accessible Web Experiences",
+        "subHeading": "I’m a front-end engineer who builds performant, accessible interfaces using clean, maintainable code. I leverage modern frameworks and tools to craft seamless digital experiences with a strong focus on usability, responsiveness, and visual clarity. Passionate about delivering products that not only look great but feel fast and intuitive for every user."
+    },
+    "about": {
+        "aboutText": "I help teams build fast, accessible, and modern interfaces that users love — using React, Tailwind, and clean, scalable code. Whether it's a landing page or a complex UI system, I turn designs into performant, pixel-perfect experiences."
+    },
+    "connect":"Let's connect",
+    "viewAllProject":"View All Project's",
+    "footer": {
+    "name": "Anurag",
+    "language": "Language"
+}
+}

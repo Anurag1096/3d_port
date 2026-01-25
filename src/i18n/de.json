@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "about": "Über mich",
+    "project": "Projekt",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "heading1": "Schnelle",
+    "heading2": " responsive",
+    "and": "und",
+    "heading3": "barrierefreie Web-Erlebnisse",
+    "subHeading": "Ich bin ein Front-End-Engineer, der performante und barrierefreie Interfaces mit sauberem, wartbarem Code entwickelt. Mit modernen Frameworks und Tools erstelle ich nahtlose digitale Erlebnisse mit starkem Fokus auf Benutzerfreundlichkeit, Responsivität und visuelle Klarheit. Meine Leidenschaft gilt Produkten, die nicht nur gut aussehen, sondern sich für jeden Nutzer schnell und intuitiv anfühlen."
+  },
+  "about": {
+    "aboutText": "Ich unterstütze Teams dabei, schnelle, barrierefreie und moderne Interfaces zu entwickeln, die Nutzer lieben — mit React, Tailwind und sauberem, skalierbarem Code. Ob Landingpage oder komplexes UI-System: Ich verwandle Designs in performante, pixelgenaue Erlebnisse."
+  },
+  "connect": "Lass uns verbinden",
+  "viewAllProject": "Alle Projekte ansehen",
+  "footer": {
+    "name": "Anurag",
+    "language": "Sprache"
+  }
+}

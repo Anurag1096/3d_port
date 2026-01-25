@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "about": "À propos",
+    "project": "Projet",
+    "contact": "Contact"
+  },
+  "hero": {
+    "heading1": "Créer des expériences",
+    "heading2": " rapides et réactives",
+    "and": "et",
+    "heading3": "accessibles sur le web",
+    "subHeading": "Je suis un ingénieur front-end qui crée des interfaces performantes et accessibles à l’aide d’un code propre et maintenable. J’utilise des frameworks et outils modernes pour concevoir des expériences numériques fluides, en mettant l’accent sur l’utilisabilité, la réactivité et la clarté visuelle. Passionné par la création de produits qui ne sont pas seulement esthétiques, mais aussi rapides et intuitifs pour chaque utilisateur."
+  },
+  "about": {
+    "aboutText": "J’aide les équipes à construire des interfaces rapides, accessibles et modernes que les utilisateurs apprécient — en utilisant React, Tailwind et un code propre et évolutif. Qu’il s’agisse d’une landing page ou d’un système UI complexe, je transforme les designs en expériences performantes et pixel-perfect."
+  },
+  "connect": "Entrons en contact",
+  "viewAllProject": "Voir tous les projets",
+  "footer": {
+    "name": "Anurag",
+    "language": "Langue"
+  }
+}
