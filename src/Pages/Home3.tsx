@@ -2,7 +2,7 @@ import React, { Suspense,useRef } from "react";
 import { Loader } from "@react-three/drei";
 import { motion,useScroll, useTransform,useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import AboutBentoGrid from "../compoents/AboutBentoGrid";
@@ -133,12 +133,12 @@ const smoothParallaxY = useSpring(heroParallaxY, {
             {/* Add more as needed */}
           </div>
           <div className="text-center mt-6">
-            <a
-              href="/project"
+            <NavLink
+              to="/project"
               className="inline-block btn  py-2 px-5 rounded-xl hover:scale-[1.03] transition"
             >
               {t("viewAllProject")}
-            </a>
+            </NavLink>
           </div>
            
         </motion.section>
