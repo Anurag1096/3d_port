@@ -1,7 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { linkedin, twitter, github } from "../assets/icons";
+import { saveToEmailjs } from "../saveToEmailjs";
+import { offlineSave } from "../offlineScripts/offlineSave";
+import { offlineSyncForms } from "../offlineScripts/offlineSyncForms";
 const serviceKey = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateKey = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKkey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -37,34 +40,45 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   // code to handle form submit
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+
+  ///////////////////////////////////////////////////
+//neet to rewrite saving sequence
+  // useEffect(()=>{
+  // const syncOff=()=>{
+  //   offlineSyncForms(saveToEmailjs)
+  // }
+  //   window.addEventListener('online',syncOff)
+
+  //   return()=> window.removeEventListener('online',syncOff)
+  // },[])
+  ///////////////////////////////////////////////////
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setIsLoading(true);
+
     if (!serviceKey || !templateKey || !publicKkey) {
       console.error("EmailJS environment variables are missing");
       setIsLoading(false);
       return;
     }
 
-    emailjs
-      .sendForm(serviceKey, templateKey, formRef.current, {
-        publicKey: publicKkey,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setIsLoading(false);
-
-          setForm({ form_name: "", reply_to: "", message: "" });
-          alert("Message sent successfully 🚀");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          setIsLoading(false);
-        },
-      );
+    if (navigator.onLine) {
+      const success = await saveToEmailjs({
+        serviceKey,
+        templateKey,
+        publicKkey,
+        formRef,
+      });
+      if (success) {
+        console.log("Sent");
+      }
+    } else {
+      //it wont take form data but formref dom values
+      await offlineSave(form);
+    }
+    setForm({ form_name: "", reply_to: "", message: "" });
   };
-
+////////////////////////////
   const handleFocus = () => {};
   const handleBlur = () => {};
   return (
