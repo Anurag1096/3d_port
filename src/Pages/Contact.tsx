@@ -42,17 +42,15 @@ function Contact() {
   // code to handle form submit
 
   ///////////////////////////////////////////////////
-//neet to rewrite saving sequence
-  useEffect(()=>{
-  const syncOff=()=>{
-    offlineSyncForms({ serviceKey,
-        templateKey,
-        publicKkey,})
-  }
-    window.addEventListener('online',syncOff)
+  //neet to rewrite saving sequence
+  useEffect(() => {
+    const syncOff = () => {
+      offlineSyncForms({ serviceKey, templateKey, publicKkey });
+    };
+    window.addEventListener("online", syncOff);
 
-    return()=> window.removeEventListener('online',syncOff)
-  },[])
+    return () => window.removeEventListener("online", syncOff);
+  }, []);
   ///////////////////////////////////////////////////
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -65,26 +63,33 @@ function Contact() {
     }
 
     if (navigator.onLine) {
-      const success=await saveToEmailjs({
+      const success = await saveToEmailjs({
         serviceKey,
         templateKey,
         publicKkey,
         formRef,
       });
-     if(success){
-      setIsLoading(false)
-      alert("Message sent.")
-     }else{
-      alert("error occured, Retry")
-      setIsLoading(false)
-     }
+      if (success) {
+        setIsLoading(false);
+        alert("Message sent.");
+      } else {
+        alert("error occured, Retry");
+        setIsLoading(false);
+      }
     } else {
       //it wont take form data but formref dom values
-      await offlineSave(formRef);
+      const success = await offlineSave(formRef);
+      if (success) {
+        alert("Message saved, will sync when you are back online")
+        setIsLoading(false);
+      }else{
+        console.log("Message saving failed")
+        setIsLoading(false)
+      }
     }
     setForm({ form_name: "", reply_to: "", message: "" });
   };
-////////////////////////////
+  ////////////////////////////
   const handleFocus = () => {};
   const handleBlur = () => {};
   return (
