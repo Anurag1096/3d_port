@@ -12,7 +12,7 @@ export async function saveToEmailjs({
   templateKey,
   formRef,
   publicKkey,
-}: Props): Promise<boolean> {
+}: Props):Promise<boolean> {
   if (!formRef.current) {
     console.error("Form reference is null");
     return false;
@@ -24,9 +24,9 @@ export async function saveToEmailjs({
     });
 
     console.log("SUCCESS!");
-    return true;
+    return true
   } catch (error: any) {
     console.error("FAILED...", error?.text || error);
-    return false;
+    return false    
   }
 }

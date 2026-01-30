@@ -43,14 +43,16 @@ function Contact() {
 
   ///////////////////////////////////////////////////
 //neet to rewrite saving sequence
-  // useEffect(()=>{
-  // const syncOff=()=>{
-  //   offlineSyncForms(saveToEmailjs)
-  // }
-  //   window.addEventListener('online',syncOff)
+  useEffect(()=>{
+  const syncOff=()=>{
+    offlineSyncForms({ serviceKey,
+        templateKey,
+        publicKkey,})
+  }
+    window.addEventListener('online',syncOff)
 
-  //   return()=> window.removeEventListener('online',syncOff)
-  // },[])
+    return()=> window.removeEventListener('online',syncOff)
+  },[])
   ///////////////////////////////////////////////////
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -63,18 +65,22 @@ function Contact() {
     }
 
     if (navigator.onLine) {
-      const success = await saveToEmailjs({
+      const success=await saveToEmailjs({
         serviceKey,
         templateKey,
         publicKkey,
         formRef,
       });
-      if (success) {
-        console.log("Sent");
-      }
+     if(success){
+      setIsLoading(false)
+      alert("Message sent.")
+     }else{
+      alert("error occured, Retry")
+      setIsLoading(false)
+     }
     } else {
       //it wont take form data but formref dom values
-      await offlineSave(form);
+      await offlineSave(formRef);
     }
     setForm({ form_name: "", reply_to: "", message: "" });
   };
@@ -89,7 +95,7 @@ function Contact() {
       className="relative flex  flex-col-reverse max-container-2 md:justify-between md:flex-row"
     >
       {/* Contact section */}
-      {/* <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
+      <div className="flex-1 min-w-[50%] flex flex-col md:max-w-[40%] ">
         <h1 className="head-text">Get in touch</h1>
 
         <form
@@ -149,7 +155,7 @@ function Contact() {
             {isLoading ? "Sending..." : "Send message"}
           </button>
         </form>
-      </div> */}
+      </div>
       <div className="flex flex-col-reverse  m-auto md:flex-row  ">
         <div className="bg-black dark:bg-[#FFFAFA] h-px w-inherit my-10 md:hidden "></div>
         <div className="hidden md:inline-block md:bg-black md:dark:bg-[#FFFAFA]  md:h-48 md:w-px md:mx-10 "></div>
