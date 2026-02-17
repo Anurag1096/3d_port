@@ -1,36 +1,61 @@
-import React, { Suspense,useRef } from "react";
+import React, { Suspense, useRef, useEffect, RefObject } from "react";
 import { Loader } from "@react-three/drei";
-import { motion,useScroll, useTransform,useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
 import AboutBentoGrid from "../compoents/AboutBentoGrid";
 
-
 function Home3() {
-  const {t}=useTranslation()
-  
+  const { t } = useTranslation();
+
   const history = useNavigate();
   const buttonClick = () => {
     history("/contact");
   };
 
+  const heroRef = useRef(null);
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  });
+  const heroParallaxY = useTransform(heroScroll, [0, 1], ["-50px", "50px"]);
+  const smoothParallaxY = useSpring(heroParallaxY, {
+    stiffness: 80,
+    damping: 20,
+  });
+  const myConnect = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      if (myConnect.current && window.scrollY < 800) {
+        const divPos = myConnect.current.getBoundingClientRect();
+        const diffInX = event.clientX - divPos.left;
+        const diffInY = event.clientY - divPos.top;
+        const radians = Math.atan2(diffInY, diffInX);
 
-const heroRef = useRef(null);
-const { scrollYProgress: heroScroll } = useScroll({
-  target: heroRef,
-  offset: ["start end", "end start"],
-});
-const heroParallaxY = useTransform(heroScroll, [0, 1], ["-50px", "50px"]);
-const smoothParallaxY = useSpring(heroParallaxY, {
-  stiffness: 80,
-  damping: 20,
-});
+        const degrees = radians * (180 / Math.PI);
 
+        // Normalize to 0-360
+        const compassDegree = (degrees + 360) % 360;
 
+        // Determine cardinal direction
+        let direction = "";
+        if (compassDegree >= 45 && compassDegree < 135) {
+          direction = "North";
+        } else if (compassDegree >= 135 && compassDegree < 225) {
+          direction = "West";
+        } else if (compassDegree >= 225 && compassDegree < 315) {
+          direction = "South";
+        } else {
+          direction = "East";
+        }
+        alert(direction);
+      }
+    };
+    window.addEventListener("click", handleMouseMove);
 
-
+    return () => window.removeEventListener("click", handleMouseMove);
+  }, []);
 
   return (
     //main home
@@ -39,11 +64,11 @@ const smoothParallaxY = useSpring(heroParallaxY, {
         <section
           id="hero-section"
           ref={heroRef}
-           className="flex justify-center items-center w-full md:min-h-screen bg-[radial-gradient(circle_at_center,_#ffe6f0_40%,_#FFFAFA_80%)]  rounded dark:bg-[radial-gradient(circle_at_center,_#4a044e_0%,_#041824_80%)]"
+          className="flex justify-center items-center w-full md:min-h-screen bg-[radial-gradient(circle_at_center,_#ffe6f0_40%,_#FFFAFA_80%)]  rounded dark:bg-[radial-gradient(circle_at_center,_#4a044e_0%,_#041824_80%)]"
         >
           {/* need to work on it */}
           <motion.div
-          style={{ y: smoothParallaxY }}
+            style={{ y: smoothParallaxY }}
             id="container"
             className="text-center px-2 h-[700px] mt-20 sm:mt-60  lg:max-w-3xl lg:h-[768px]  lg:px-4 xl:h-[768px]"
           >
@@ -54,8 +79,8 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {t("hero.heading1")},{" "}
-              <span className="text-[#2589FABD]"> {t("hero.heading2")}</span>, {t("hero.and")}
-              {" "} {t("hero.heading3")}
+              <span className="text-[#2589FABD]"> {t("hero.heading2")}</span>,{" "}
+              {t("hero.and")} {t("hero.heading3")}
             </motion.h1>
 
             <motion.h2
@@ -64,10 +89,11 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             >
-             {t("hero.subHeading")}
+              {t("hero.subHeading")}
             </motion.h2>
-
+            {/* for lets connect box shadow property we  */}
             <motion.button
+              ref={myConnect}
               onClick={buttonClick}
               className="bg-[#F21E49B0] hover:bg-[#F21E49C9] text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition duration-300"
               initial={{
@@ -90,11 +116,11 @@ const smoothParallaxY = useSpring(heroParallaxY, {
             </motion.button>
           </motion.div>
         </section>
-          <h1 className="text-5xl relative top-[-50px] sm:text-6xl  sm:top-[-70px] font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
-            About
-          </h1>
-             <AboutBentoGrid/>
-          
+        <h1 className="text-5xl relative top-[-50px] sm:text-6xl  sm:top-[-70px] font-bold text-center mb-8 orrange-gradient_text  drop-shadow-2xl">
+          About
+        </h1>
+        <AboutBentoGrid />
+
         <motion.section
           id="projects-section"
           className="py-20 px-6 bg-[#FFFAFA] dark:bg-[#041824]"
@@ -107,23 +133,39 @@ const smoothParallaxY = useSpring(heroParallaxY, {
             Projects
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
-          
             <div className="bg-white  dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-              <img className="aspect-square" src="/reddit.png" alt="reddit image" width={512} height={512}/>
+              <img
+                className="aspect-square"
+                src="/reddit.png"
+                alt="reddit image"
+                width={512}
+                height={512}
+              />
               <h3 className="font-semibold text-lg mb-1">Reddit Client</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 TypeScript,React and Axios
               </p>
             </div>
-               <div className="bg-white  dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-                <img src="/pomodoro.png" alt="pomodoro image" width={512} height={512}/>
+            <div className="bg-white  dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+              <img
+                src="/pomodoro.png"
+                alt="pomodoro image"
+                width={512}
+                height={512}
+              />
               <h3 className="font-semibold text-lg mb-1">Pomodoro Timer</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Nextjs,Redux Toolkit
               </p>
             </div>
-              <div className="bg-white  dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
-              <img className=" aspect-square" src="/kkanban.png" alt="kanban image" width={512} height={512}/>
+            <div className="bg-white  dark:bg-[#222] p-4 rounded-xl shadow-md hover:scale-[1.02] transition text-center">
+              <img
+                className=" aspect-square"
+                src="/kkanban.png"
+                alt="kanban image"
+                width={512}
+                height={512}
+              />
               <h3 className="font-semibold text-lg mb-1">Kanban Board</h3>
 
               <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -140,9 +182,7 @@ const smoothParallaxY = useSpring(heroParallaxY, {
               {t("viewAllProject")}
             </NavLink>
           </div>
-           
         </motion.section>
-        
       </Suspense>
     </section>
   );
