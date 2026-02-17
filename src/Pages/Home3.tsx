@@ -1,6 +1,6 @@
-import React, { Suspense, useRef, useEffect, RefObject } from "react";
+import React, { Suspense, useRef, useEffect } from "react";
 import { Loader } from "@react-three/drei";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useMotionValue ,useMotionTemplate} from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -25,10 +25,26 @@ function Home3() {
     damping: 20,
   });
   const myConnect = useRef<HTMLButtonElement>(null);
+  const shadowX=useMotionValue(10)
+  const shadowY=useMotionValue(4)
+  const dynamicShadow = useMotionTemplate`
+  ${shadowX}px ${shadowY}px 8px 4px rgba(0,0,0,0.2)
+`;
   useEffect(() => {
+    let rafId: number | null=null;
     const handleMouseMove = (event: MouseEvent) => {
-      if (myConnect.current && window.scrollY < 800) {
-        const divPos = myConnect.current.getBoundingClientRect();
+      if (
+        !myConnect.current ||
+        window.scrollY >= 800 ||
+        window.innerWidth <= 768
+      )
+        return;
+
+      if (rafId) cancelAnimationFrame(rafId);
+
+      ///
+      rafId = requestAnimationFrame(() => {
+        const divPos = myConnect.current!.getBoundingClientRect();
         const diffInX = event.clientX - divPos.left;
         const diffInY = event.clientY - divPos.top;
         const radians = Math.atan2(diffInY, diffInX);
@@ -39,22 +55,36 @@ function Home3() {
         const compassDegree = (degrees + 360) % 360;
 
         // Determine cardinal direction
-        let direction = "";
+        // north
+        let horizontal, vertical;
         if (compassDegree >= 45 && compassDegree < 135) {
-          direction = "North";
+          //north
+          horizontal = 4;
+          vertical = 10;
         } else if (compassDegree >= 135 && compassDegree < 225) {
-          direction = "West";
+          // west
+          horizontal = -10;
+          vertical = 4;
         } else if (compassDegree >= 225 && compassDegree < 315) {
-          direction = "South";
+          // south
+          horizontal = 4;
+          vertical = -10;
         } else {
-          direction = "East";
+          horizontal = 10;
+          vertical = 4;
         }
-        alert(direction);
-      }
-    };
-    window.addEventListener("click", handleMouseMove);
+        //updating the
+        shadowX.set(horizontal)
+        shadowY.set(vertical)
+    });
+  }
+    window.addEventListener("mousemove", handleMouseMove);
+  
+    return () => {window.removeEventListener("mousemove", handleMouseMove)
 
-    return () => window.removeEventListener("click", handleMouseMove);
+  if(rafId) cancelAnimationFrame(rafId)
+
+    };
   }, []);
 
   return (
@@ -95,16 +125,17 @@ function Home3() {
             <motion.button
               ref={myConnect}
               onClick={buttonClick}
+              style={{ boxShadow: dynamicShadow }}
               className="bg-[#F21E49B0] hover:bg-[#F21E49C9] text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition duration-300"
               initial={{
                 opacity: 0,
                 y: 10,
-                boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
+              
               }}
               animate={{
                 opacity: 1,
                 y: 0,
-                boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+               
               }}
               whileHover={{
                 y: -3,
