@@ -5,11 +5,11 @@ import GitHubHeatMap from "./GithubHeatMap";
 import { skillsSmall } from "../constants";
 import { HackerRankBadge2 } from "./HackerRankBadge";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 const SVGPerson = lazy(() => import("../compoents/svgPerson"));
 
 const AboutBentoGrid = () => {
-
-  const {t}=useTranslation()
+  const { t } = useTranslation();
   return (
     <>
       {/* About section */}
@@ -17,10 +17,9 @@ const AboutBentoGrid = () => {
         id="about-section"
         className="grid mx-10 sm:grid-rows-3 gap-4 max-w-4xl sm:mx-auto place-items-center "
       >
-      <motion.div className="xs:row-span-2 xs:w-full xs:min-h-[250px] sm:row-span-2 w-full h-full rounded-xl bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
-  <SVGPerson className="block w-full h-full" />
-</motion.div>
-
+        <motion.div className="xs:row-span-2 xs:w-full xs:min-h-[250px] sm:row-span-2 w-full h-full rounded-xl bg-white dark:bg-[#222] shadow-lg overflow-hidden flex items-center justify-center">
+          <SVGPerson className="block w-full h-full" />
+        </motion.div>
 
         <motion.div className="pb-4 sm:col-span-3 w-full h-full rounded-xl text-center bg-white dark:bg-[#222] shadow-lg">
           <h6 className="subhead-text">My Skills</h6>
@@ -78,15 +77,15 @@ const AboutBentoGrid = () => {
 
         <motion.div className="xs:p-1 sm:col-span-4 w-full h-full py-4 rounded-xl overflow-hidden bg-white dark:bg-[#222]  shadow-lg">
           <p className="text-lg text-center p-6 sm:p-1 sm:text-xl md:text-start md:max-w-3xl m-auto  text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
-           {t("about.aboutText")}
+            {t("about.aboutText")}
           </p>
           <div className="text-center mt-6 mx-6 md:mx-1">
-            <a
-              href="/about"
-              className="inline-block btn  py-2 px-5 rounded-xl hover:scale-[1.03] transition  mb-6"
+            <NavLink
+              to="/about"
+              className="inline-block btn  py-2 px-5 rounded-xl hover:scale-[1.03] transition"
             >
               Learn more
-            </a>
+            </NavLink>
           </div>
         </motion.div>
       </motion.section>
