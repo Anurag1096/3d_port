@@ -65,7 +65,7 @@ const SideBar = (props: Props) => {
           </li>
           <li className="list_item">
             <a 
-            href="/Anurag_cv.pdf"
+            href="/Anurag_cv2.pdf"
             download>
              Download CV
             </a>

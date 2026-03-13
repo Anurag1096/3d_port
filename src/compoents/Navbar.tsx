@@ -54,7 +54,7 @@ const {t}=useTranslation()
         {t('nav.contact')}
         </NavLink>
         <a
-          href="/Anurag_cv.pdf"
+          href="/Anurag_cv2.pdf"
           download
           title="Download CV (PDF)"
           className="px-2 rounded-lg bg-transparent text-white hover:opacity-80"
